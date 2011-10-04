@@ -1,0 +1,130 @@
+## Some additional thunar-specific theming
+
+style "locationbar"
+{
+	GtkWidget::border_width = 5
+	engine "murrine"
+	{ contrast = 1.8 }
+}
+
+style "borderless"
+{
+#	GtkPaned::border_width = 0
+	#base[NORMAL] = @base_color
+	bg[NORMAL] = @base_color
+	engine "murrine"
+	{
+		contrast	= 0.0
+	}
+}
+
+style "handlebox"
+{
+	GtkPaned		::handle-size          			= 2
+  engine "pixmap"
+  {
+    image
+    {
+      function				= HANDLE
+      recolorable			= TRUE
+      overlay_file			= "thunar_grip.png"
+#      overlay_file			= "Handles/handle-v.png"
+      overlay_stretch			= TRUE
+      orientation			= VERTICAL
+    }
+#    image
+#    {
+ #     function				= HANDLE
+  #    overlay_file			= "Others/null.png"
+#      overlay_file			= "Handles/handle-h.png"
+  #    overlay_stretch 	= FALSE
+  #    orientation			= HORIZONTAL
+ #   }
+  }
+}
+
+style "sidepane-tree"
+{
+	base[NORMAL]	= shade (1.55,@selected_bg_color)
+	#base[INSENSITIVE]	= shade (1.55,@selected_bg_color)
+
+	bg[ACTIVE]	= shade (1.55,@selected_bg_color)
+	bg[NORMAL]	= shade (1.55,@selected_bg_color)
+	bg[PRELIGHT]	= shade (1.40,@selected_bg_color)
+	engine "murrine"
+	{
+		contrast	= 0.0
+	}
+}
+
+style "sidepane-shortcut"
+{
+	bg[NORMAL]	= shade (1.55,@selected_bg_color)
+	bg[PRELIGHT]	= shade (1.40,@selected_bg_color)
+	engine "murrine"
+	{
+		contrast	= 0.4
+	}
+}
+
+style "sidepane-scrollbar"
+{
+	GtkScrollbar::trough-side-details = 1
+#	GtkScrollbar::stepper-spacing	= 1
+	
+#	GtkScrollbar::focus-line-width	= 0
+#	GtkScrollbar::activate-slider	= 1
+#	GtkScrollbar::trough-border	= 0
+#	GtkScrolledWindow	::scrollbars-within-bevel		= 1
+
+	
+	#base[INSENSITIVE]	= shade (1.55,@selected_bg_color)
+
+	#base[INSENSITIVE] = shade (1.55,@selected_bg_color)
+	bg[NORMAL]	= shade (1.55,@selected_bg_color)
+	bg[ACTIVE]	= shade (1.55,@selected_bg_color)
+	bg[SELECTED]	= shade (1.4, @panel_bg)
+	bg[INSENSITIVE]	= @base_color
+	
+	engine "murrine" {
+		colorize_scrollbar	= TRUE
+		roundness		= 6
+#		gradient_shades		= {0.65,0.65,0.65,0.65}
+#		gradient_shades		= {1.0,1.0,1.0,1.0}
+#		highlight_shade		= 1.0
+#		glow_shade		= 1.0
+#		reliefstyle		= 2
+#		gradient_colors		= FALSE
+		focus_color		= shade (1.55,@selected_bg_color)
+#		lightborder_shade       = 0.0
+#		lightborderstyle	= 1
+#		trough_shades		= { 1.0, 0.5 }
+#		cellstyle		= 0
+#		trough_shades		= { 1.2, 1.0 }
+#		trough_border_shades	= { 5.0, 0.0 }
+		border_shades		= { 1.2, 1.2 }
+#		shadow_shades		= { 0.0, 0.0 }
+		contrast		= 0.0			# no trough-border
+#		prelight_shade		= 0.65
+	}
+}
+#ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarLocationButtons.ThunarLocationButton
+#ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarStatusbar.GtkFrame
+#ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarDetailsView.ExoTreeView
+#ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarCompactView
+class "ThunarWindow"	style "borderless"
+class "ThunarWindow" style "resize-grip"
+
+widget_class "*ThunarLocationButtons*" style "murrine-default"
+class "ThunarWindow.GtkTable.GtkHPaned.GtkTable"	style "borderless"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarCompactView"	style "borderless"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarIconView"	style "borderless"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarDetailsView"	style "borderless"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarStatusbar.GtkFrame"	style "borderless"
+#widget_class "ThunarWindow.GtkTable.GtkHPaned.GtkTable.ThunarLocationButtons.ThunarLocationButton"	style "murrine-button"
+#widget_class "ThunarWindow.GtkTable.GtkHPaned"	style "handlebox"
+widget_class "*ThunarShortcutsView*" style "sidepane-tree"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.ThunarTreePane*" style "sidepane-tree"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.ThunarShortcutsPane.GtkVScrollbar" style "sidepane-scrollbar"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.ThunarTreePane.GtkVScrollbar" style "sidepane-scrollbar"
+widget_class "ThunarWindow.GtkTable.GtkHPaned.ThunarTreePane.GtkHScrollbar" style "sidepane-scrollbar"

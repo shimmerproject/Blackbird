@@ -282,7 +282,7 @@ style "murrine-notebook"
 	bg[NORMAL]	= shade (1.05, @bg_color) # Tab background.
 	bg[ACTIVE]	= shade (1.35, @bg_color) # Unfocused tab background.
 	fg[ACTIVE]	= shade (0.65, @fg_color)
-	#bg[NORMAL]	= @base_color
+
 	engine "murrine" 
 	{
 		roundness       = 3
@@ -292,27 +292,8 @@ style "murrine-notebook"
 
 style "murrine-menu"
 {
-	#ythickness        = 2
-	#xthickness        = 4
 	GtkMenuBar	:: shadow-type		= GTK_SHADOW_NONE
-	
-	bg[SELECTED]      = shade (0.85, @selected_bg_color)
-	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (0.85, @selected_bg_color)
-	bg[ACTIVE]        = @bg_color
-	bg[INSENSITIVE]   = @bg_color
-	fg[NORMAL]        = @fg_color # Color for normal text.
-	fg[PRELIGHT]      = @base_color
-	fg[SELECTED]      = @base_color
-	fg[ACTIVE]        = @base_color
-	fg[INSENSITIVE]   = shade (0.5, @base_color) # Text color for non-interactive menu items
-	text[NORMAL]      = @text_color # Color for menu-item radio/checks.
-	base[NORMAL]      = @bg_color # Color for menu-item radio/checks background.
-	text[PRELIGHT]    = @base_color
-	text[SELECTED]    = @base_color
-	text[ACTIVE]      =@base_color
-	text[INSENSITIVE] = @text_color
-	
+
 	engine "murrine" 
 	{
 		roundness = 0 # Roundness of menu items.

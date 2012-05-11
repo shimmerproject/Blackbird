@@ -3,8 +3,8 @@
 # based on "Greybird" by Simon Steinbeiß
 # Description: As is the original theme, this theme is 100% free and open source.
 
-gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#7CA4CF\nbase_color:#f4f4f4" # Background, base.
-gtk_color_scheme	= "fg_color:#EEEEEC\nselected_fg_color:#1F1F1F\ntext_color:#1F1F1F" # Foreground, text. 
+gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#cbe3f1\nbase_color:#f4f4f4" # Background, base.
+gtk_color_scheme	= "fg_color:#EEEEEC\nselected_fg_color:#1F1F1F\ntext_color:#444444" # Foreground, text. 
 gtk_color_scheme	= "tooltip_bg_color:#FCF5B8\ntooltip_fg_color:#1F1F1F" # Tooltips.
 gtk_color_scheme	= "link_color:#74a0c6" # Hyperlinks
 gtk_color_scheme	= "panel_bg:#686868" # Panel bg color
@@ -197,10 +197,10 @@ style "murrine-dark" {
 	
 	GtkMenuBar	:: shadow-type		= GTK_SHADOW_NONE
 	
-	bg[NORMAL]	= @bg_color_dark
-	bg[ACTIVE]	= shade (0.7, @bg_color_dark)
-	bg[PRELIGHT]	= shade (0.7, @bg_color_dark)
-	bg[SELECTED]	= shade (0.6, @bg_color_dark)
+	bg[NORMAL]	= shade (1.1, @bg_color)
+	bg[ACTIVE]	= shade (0.8, @selected_bg_color)
+	bg[PRELIGHT]	= shade (0.8, @selected_bg_color)
+	bg[SELECTED]	= shade (0.8, @selected_bg_color) #mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
 	
 	fg[NORMAL]	= @text_color_dark
 	fg[PRELIGHT]	= @text_color_dark
@@ -265,7 +265,7 @@ style "murrine-entry" = "murrine-wider" {
 style "murrine-button" = "murrine-wider"
 {	
 	bg[NORMAL]        = shade (0.9, @bg_color) 
-	bg[PRELIGHT]      = mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
+	bg[PRELIGHT]      = shade (0.5, @bg_color)  #mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
 	bg[ACTIVE]        = shade (0.3, @bg_color)
 	bg[SELECTED]      = shade (0.2, @bg_color)  
 	bg[INSENSITIVE]   = shade (0.95, @bg_color)
@@ -327,21 +327,22 @@ style "murrine-menu"
 
 
 style "murrine-menubar" = "murrine-menu" {
-	bg[SELECTED]	= shade (0.7, @bg_color_dark)
+	bg[SELECTED]	= shade (0.85, @selected_bg_color)
 }
 
 style "menubar-menuitem"
 {
 	#ythickness        = 2
 	#xthickness        = 4
-	bg[PRELIGHT]   = @selected_bg_color
+	bg[ACTIVE]   = @selected_bg_color
 	bg[SELECTED]   = @selected_bg_color
-	fg[NORMAL]     = @base_color
-	fg[PRELIGHT]   = @base_color
-	fg[SELECTED]   = @base_color
-	text[NORMAL]   = @base_color
-	text[PRELIGHT] = @base_color
-	text[SELECTED] = @base_color
+	bg[PRELIGHT]   = @selected_bg_color
+	fg[NORMAL]     = @text_color
+	fg[PRELIGHT]   = @text_color
+	fg[SELECTED]   = @text_color
+	text[NORMAL]   = @text_color
+	text[PRELIGHT] = @text_color
+	text[SELECTED] = @text_color
 }
 
 style "menubar-menuitem-prelight"

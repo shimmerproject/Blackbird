@@ -3,14 +3,14 @@
 # based on "Greybird" by Simon Steinbeiß
 # Description: As is the original theme, this theme is 100% free and open source.
 
-gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#cbe3f1\nbase_color:#f4f4f4" # Background, base.
-gtk_color_scheme	= "fg_color:#EEEEEC\nselected_fg_color:#1F1F1F\ntext_color:#444444" # Foreground, text. 
+gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#8fc1de\nbase_color:#f4f4f4" # Background, base.
+gtk_color_scheme	= "fg_color:#eeeeee\nselected_fg_color:#eeeeee\ntext_color:#444444" # Foreground, text. 
 gtk_color_scheme	= "tooltip_bg_color:#FCF5B8\ntooltip_fg_color:#1F1F1F" # Tooltips.
-gtk_color_scheme	= "link_color:#74a0c6" # Hyperlinks
+gtk_color_scheme	= "link_color:#709cb5" # Hyperlinks
 gtk_color_scheme	= "panel_bg:#686868" # Panel bg color
 gtk_color_scheme	= "fm_color:#F7F7F7" # Color used in Nautilus and Thunar.
 #gtk_color_scheme        = "nox_bgr: #5C5E61;nox_fgr: #EEEEEC;nox_bas: #D7D7D7;nox_txt: #1F1F1F;fg_color: #EEEEEC;bg_color: #5C5E61;text_color: #1F1F1F;base_color: #D7D7D7;selected_fg_color: #1F1F1F;selected_bg_color: #7CA4CF;tooltip_fg_color: #1F1F1F;tooltip_bg_color: #FCF5B8;clr_red: #EF2929;clr_grn: #8AE234;clr_blu:#729FCF"
-gtk_color_scheme	= "bg_color_dark:#686868\ntext_color_dark:#FFF"
+gtk_color_scheme	= "bg_color_dark:#1b1b1b\ntext_color_dark:#FFF"
 
 gtk-icon-sizes		= "panel-menu=16,16:panel=16,16:gtk-button=16,16"			# Set icon size for button without text
 gtk-button-images	= 0					# Disables icons for buttons with text
@@ -96,25 +96,25 @@ style "murrine-default"
 	fg[PRELIGHT]      = @fg_color
 	fg[SELECTED]      = @selected_fg_color
 	fg[ACTIVE]        = @fg_color
-	fg[INSENSITIVE]   = darker (@bg_color)
+	fg[INSENSITIVE]   = shade (0.5, @base_color)
 
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (1.02, @bg_color)
+	bg[PRELIGHT]      = shade (1.2, @bg_color)
 	bg[SELECTED]	  = @selected_bg_color
-	bg[INSENSITIVE]   = @bg_color
-	bg[ACTIVE]        = shade (1.04, @bg_color)
+	bg[INSENSITIVE]   = shade (0.6, @base_color)
+	bg[ACTIVE]        = shade (1.24, @bg_color)
 
 	base[NORMAL]      = @base_color
 	base[PRELIGHT]    = shade (0.95, @bg_color)
 	base[ACTIVE]      = shade (0.92, @selected_bg_color)
 	base[SELECTED]    = shade (0.93, @selected_bg_color)
-	base[INSENSITIVE] = @bg_color
+	base[INSENSITIVE] = shade (0.6, @base_color)
 
 	text[NORMAL]      = @text_color
 	text[PRELIGHT]    = @text_color
 	text[ACTIVE]      = @selected_fg_color
 	text[SELECTED]    = @selected_fg_color
-	text[INSENSITIVE] = darker (@bg_color)
+	text[INSENSITIVE] = shade (0.5, @base_color)
 
 	engine "murrine" 
 	{
@@ -143,7 +143,7 @@ style "murrine-default"
 		menuitemstyle       = 0                 # 0 = flat, 1 = glassy, 2 = striped
 		menustyle           = 0                 # 0 = no vertical menu stripe, 1 = display vertical menu stripe
 		prelight_shade      = .95               # shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors		
-		progressbarstyle    = 1                 # 0 = nothing, 1 = stripes, 2 = lines
+		progressbarstyle    = 0                 # 0 = nothing, 1 = stripes, 2 = lines
 		reliefstyle         = 3                 # 0 = flat, 1 = inset, 2 = shadow
 		rgba                = FALSE             # FALSE = disabled, TRUE = enabled
 		roundness           = 3                 # 0 = squared, 1 = old default, more will increase roundness
@@ -158,14 +158,14 @@ style "murrine-default"
 		trough_border_shades = { 0.9, 0.7 }	}
 }
 
-### RESIZE GRIP PIXMAP Proof of concept ###
-
-style "resize-grip" #= "murrine-default"
+style "resize-grip"
 {
-	engine "pixmap"	{
+	engine "pixmap"
+	{
 		image {
 			function	= RESIZE_GRIP
 			recolorable	= FALSE
+			detail		= "statusbar"
 			overlay_file	= "resize_grip.png"
 			overlay_border	= {0,0,0,0 }
 			overlay_stretch	= FALSE
@@ -224,11 +224,6 @@ style "murrine-wide-dark" = "murrine-dark"
 	xthickness        = 4
 }
 
-style "tabwin-dark" = "murrine-dark" {
-	bg[NORMAL]	= "#646e7b"
-	bg[SELECTED]	= "#75808f"
-}
-
 style "murrine-wide"
 {
 	xthickness = 2
@@ -265,7 +260,7 @@ style "murrine-entry" = "murrine-wider" {
 style "murrine-button" = "murrine-wider"
 {	
 	bg[NORMAL]        = shade (0.9, @bg_color) 
-	bg[PRELIGHT]      = shade (0.5, @bg_color)  #mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
+	bg[PRELIGHT]      = shade (0.6, @bg_color)  #mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
 	bg[ACTIVE]        = shade (0.3, @bg_color)
 	bg[SELECTED]      = shade (0.2, @bg_color)  
 	bg[INSENSITIVE]   = shade (0.95, @bg_color)
@@ -310,7 +305,7 @@ style "murrine-menu"
 	fg[PRELIGHT]      = @base_color
 	fg[SELECTED]      = @base_color
 	fg[ACTIVE]        = @base_color
-	fg[INSENSITIVE]   = shade (0.75, @bg_color) # Text color for non-interactive menu items
+	fg[INSENSITIVE]   = shade (0.5, @base_color) # Text color for non-interactive menu items
 	text[NORMAL]      = @text_color # Color for menu-item radio/checks.
 	base[NORMAL]      = @bg_color # Color for menu-item radio/checks background.
 	text[PRELIGHT]    = @base_color
@@ -352,6 +347,8 @@ style "menubar-menuitem-prelight"
 
 style "murrine-treeview"
 {
+	fg[NORMAL]        = @text_color
+	fg[PRELIGHT]        = @text_color
   	engine "murrine" 
 	{
 		roundness = 0
@@ -363,10 +360,10 @@ style "murrine-treeview-header" = "murrine-button"
 {
 	xthickness   = 2
 	ythickness   = 1
-	
-	bg[NORMAL]	 = shade (1.14, @bg_color)  # Color for treeview headers.
-	bg[PRELIGHT] = shade (0.98, @bg_color)  # Color for treeview header prelight.
-	bg[ACTIVE]   = shade (0.85, @bg_color)  # Color for pressed-treeview.
+
+	bg[NORMAL]	 = shade (0.87, @base_color)  # Color for treeview headers.
+	bg[PRELIGHT] = shade (0.75, @base_color)  # Color for treeview header prelight.
+	bg[ACTIVE]   = shade (0.75, @base_color)  # Color for pressed-treeview.
   	
 	engine "murrine" 
 	{
@@ -386,7 +383,7 @@ style "murrine-tooltips" = "murrine-wider"
 	ythickness = 4
 
 	bg[NORMAL] = @tooltip_bg_color
-	bg[SELECTED] = "#000000"
+	bg[SELECTED] = darker (@tooltip_fg_color)
 	fg[NORMAL] = @tooltip_fg_color
 
 	engine "murrine"
@@ -402,12 +399,12 @@ style "murrine-progressbar"
 	ythickness   = 0
 
 	fg[PRELIGHT] = @selected_fg_color
-	bg[NORMAL]   = shade (1.05, @bg_color)
-	bg[SELECTED]	= mix (0.4, @bg_color, shade (0.9, @selected_bg_color))
+	bg[NORMAL]   = shade (1.4, @bg_color)
+	bg[SELECTED]	= shade (1.4, @bg_color) #mix (0.4, @bg_color, shade (0.9, @selected_bg_color))
 
 	engine "murrine" {
 		gradient_shades = {1.15,1.05,1.0,0.95}
-		trough_shades	= {0.95, 1.15}
+		trough_shades	= {0.65, 0.9}
 		trough_border_shades	= { 0.8, 0.7 }
 		roundness 	= 4
 		contrast	= 0.8
@@ -448,63 +445,44 @@ style "murrine-statusbar"
 	xthickness = 2
 }
 
-style "murrine-comboboxentry"
+style "murrine-comboboxentry" = "murrine-button"
 {
 	text[NORMAL]		= @text_color
 	text[PRELIGHT]		= @text_color
-	
-	fg[NORMAL]	= @text_color
-	fg[PRELIGHT]	= @text_color
+
+	fg[NORMAL]	= @base_color # arrow color
+	fg[PRELIGHT]	= @base_color
+	fg[INSENSITIVE]	= shade (0.3, @base_color)
 	
 	engine "murrine"
 	{
-		contrast      = 0.4
 		reliefstyle   = 4
-		border_shades = {1.03,0.8}
-		shadow_shades = {0.5,0.0}
 	}
 }
 
 style "murrine-combo" = "murrine-comboboxentry"
 {
-	bg[ACTIVE] = shade (0.85, @bg_color) # Color for pressed-spinbuttons.
+	bg[ACTIVE] = shade (0.4, @bg_color) # Color for pressed-spinbuttons.
+	text[INSENSITIVE]	= shade (0.3, @base_color)
 }
 
 style "murrine-scale" = "murrine-button"
 {
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
-	bg[ACTIVE]				= @base_color
-	bg[NORMAL]				= @panel_bg
-	bg[PRELIGHT]				= shade (0.5, @panel_bg)
-	bg[INSENSITIVE]				= @panel_bg
-	bg[SELECTED]				= @panel_bg
+	bg[ACTIVE]				= shade (0.8, @bg_color)
+	bg[NORMAL]				= shade (0.8, @base_color)
+	bg[PRELIGHT]				= shade (0.5, @base_color)
+	bg[INSENSITIVE]				= @text_color_dark
+	bg[SELECTED]				= @selected_bg_color
 	
 	engine "murrine"
 	{
+		highlight_shade		= 1.05
+		lightborder_shade	= 0.8
 		roundness 		= 5
-		border_shades		= { 1.0, 1.0 }
-		contrast		= 0.5
-		trough_shades		= { 0.8, 0.8 }
-		trough_border_shades	= { 0.9, 0.9 }
-		highlight_shade		= 1.00
-		lightborder_shade	= 1.7
-		gradient_shades		= {1.0,1.0,1.0,1.0}
-		border_shades		= { 1.0, 1.0 }
-		shadow_shades		= { 0.5, 0.5 }
-	}
-}
-
-style "murrine-scale-dark" = "murrine-scale"
-{
-	bg[ACTIVE]				= @panel_bg
-	bg[NORMAL]				= @text_color_dark
-	bg[PRELIGHT]				= shade (0.5, @panel_bg)
-	bg[INSENSITIVE]				= @text_color_dark
-	bg[SELECTED]				= @text_color_dark
-	engine "murrine"
-	{
-		roundness 		= 5
+		border_shades		= { 0.4, 0.2 }
+		contrast		= 0.8
 	}
 }
 
@@ -523,11 +501,14 @@ style "murrine-nautilus-location" # Workaround for nautilus' messages.
 
 style "murrine-radiocheck"
 {
+	text[NORMAL]	= shade (0.8, @selected_bg_color)	# color of the dot/tick in radio/check
+	text[INSENSITIVE]	= shade (0.8, @base_color)
 	bg[NORMAL]	= shade (1.06, @bg_color) 
 	bg[PRELIGHT]	= shade (1.06, @bg_color)  
 	bg[ACTIVE]	= shade (0.85, @bg_color)
-	bg[SELECTED]	= shade (1.0, @selected_bg_color)  
-	bg[INSENSITIVE]	= shade (0.95, @bg_color)
+	bg[SELECTED]	= shade (1.0, @base_color)  
+	bg[INSENSITIVE]	= shade (0.8, @base_color)
+	base[INSENSITIVE]	= shade (0.8, @base_color)
 
   	engine "murrine" 
 	{
@@ -549,8 +530,9 @@ style "murrine-toolbar" = "murrine-default"
 
 style "xfce-header"
 {
-	fg[NORMAL]	= @fg_color
-	base[NORMAL]	 = shade (1.18, @bg_color)
+	text[NORMAL]	= @base_color
+	fg[NORMAL]	= @text_color
+	base[NORMAL]	 = shade (1.65, @bg_color)
 	engine "murrine" {
 		gradient_shades = {0.1,0.5,0.6,1.0}
 	}
@@ -563,27 +545,18 @@ style "xfdesktop-windowlist" #= "murrine-menu"
 	text[INSENSITIVE]   = shade (0.95, @base_color)
 }
 
-
-style "murrine-borderless"
+style "tabwin" = "murrine-dark"
 {
-#	GtkPaned::border_width = 0
-#	base[NORMAL] = @base_color
-#	base[NORMAL] = @base_color
-#	base[ACTIVE] = @base_color
-#	base[SELECTED]	= @base_color
-#	base[INSENSITIVE] = @base_color
-	bg[NORMAL] = @base_color
-#	bg[ACTIVE] = @base_color
-#	bg[SELECTED]	= @base_color
-#	bg[INSENSITIVE] = @base_color
-#	fg[INSENSITIVE] = @base_color
-#	text[INSENSITIVE] = @base_color
+	Xfwm4TabwinWidget::border-width = 0
+	Xfwm4TabwinWidget::icon-size = 64
+	bg[NORMAL]	= @bg_color
+	bg[SELECTED]	= shade (0.8, @selected_bg_color)
 	engine "murrine"
 	{
-	#	roundness	= 0
-	#	contrast	= 0.0
+		focusstyle = 0
 	}
 }
+
 
 ###############################################################################
 # The following part of the gtkrc applies the different styles to the widgets.
@@ -601,6 +574,7 @@ class "GtkSeparator" style "murrine-wide"
 class "GtkCalendar"  style "murrine-wide"
 class "GtkToolbar"   style "murrine-toolbar"
 class "GtkHandleBox*" style "murrine-toolbar"
+class "GtkStatusbar" style "resize-grip"
 
 class "GtkSpinButton"  style "murrine-combo"
 class "GtkScale"       style "murrine-scale"
@@ -667,6 +641,7 @@ widget_class "*GnmSimpleCanvas*"		style "murrine-treeview-header" # Gnumeric tre
 
 widget_class "*XfceHeading*"			style "xfce-header"
 widget_class "*XfceDesktop*"			style "xfdesktop-windowlist"
+widget "xfwm4-tabwin*"				style "tabwin"
 
 # Workarounds for Evolution
 widget_class "*.ETable.ECanvas"    style "murrine-treeview-header"
@@ -704,7 +679,7 @@ style "murrine-text-is-fg-color-workaround"
 	text[PRELIGHT]    = @fg_color
 	text[SELECTED]    = @selected_fg_color
 	text[ACTIVE]      = @fg_color
-	text[INSENSITIVE] = darker (@bg_color)
+	text[INSENSITIVE] = shade (0.5, @base_color)
 }
 widget_class "*.<GtkComboBox>.<GtkCellView>"   style "murrine-text-is-fg-color-workaround"
 
@@ -733,9 +708,6 @@ widget_class "*<GtkListItem>*" style "murrine-fg-is-text-color-workaround"
 # Only match GtkCList and not the parent widgets, because that would also change the headers.
 widget_class "*<GtkCList>" style "murrine-fg-is-text-color-workaround"
 widget_class "*<EelEditableLabel>" style "murrine-fg-is-text-color-workaround"
-
-widget "xfwm4-tabwin*" style "tabwin-dark"
-
 
 
 # Google Chrome/Chromium theming (requires 9.0.597 or newer)

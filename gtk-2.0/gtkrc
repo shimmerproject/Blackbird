@@ -93,8 +93,8 @@ style "murrine-default"
 	ythickness = 1
 
 	fg[NORMAL]        = @fg_color
-	fg[PRELIGHT]      = @fg_color
-	fg[SELECTED]      = @selected_fg_color
+	fg[PRELIGHT]      = @selected_fg_color
+	fg[SELECTED]      = @fg_color
 	fg[ACTIVE]        = @fg_color
 	fg[INSENSITIVE]   = shade (0.5, @base_color)
 
@@ -111,7 +111,7 @@ style "murrine-default"
 	base[INSENSITIVE] = shade (0.6, @base_color)
 
 	text[NORMAL]      = @text_color
-	text[PRELIGHT]    = @text_color
+	text[PRELIGHT]    = @selected_fg_color
 	text[ACTIVE]      = @selected_fg_color
 	text[SELECTED]    = @selected_fg_color
 	text[INSENSITIVE] = shade (0.5, @base_color)
@@ -202,15 +202,7 @@ style "murrine-dark" {
 	bg[PRELIGHT]	= shade (0.8, @selected_bg_color)
 	bg[SELECTED]	= shade (0.8, @selected_bg_color) #mix(0.7, shade(0.7,@bg_color), shade (0.8, @selected_bg_color))
 	
-	fg[NORMAL]	= @text_color_dark
-	fg[PRELIGHT]	= @text_color_dark
-	fg[ACTIVE]	= @text_color_dark
-	fg[SELECTED]	= @text_color_dark
-	
-	text[NORMAL]   = @text_color_dark
-	text[PRELIGHT] = @text_color_dark
-	text[ACTIVE]   = @text_color_dark
-	text[SELECTED]   = @text_color_dark
+	text[NORMAL]   = @fg_color
 	
 	engine "murrine" 
 	{
@@ -265,7 +257,7 @@ style "murrine-button" = "murrine-wider"
                 lightborder_shade   = 1.95
                 gradient_shades     = {1.35,1.2,1.0,0.96}
                 border_shades       = { 1.2,0.95 }
-                reliefstyle         = 1
+                reliefstyle         = 2
                 shadow_shades = { 1.3, 0.5 }
 	}
 }
@@ -306,12 +298,12 @@ style "menubar-menuitem"
 	bg[ACTIVE]	= @selected_bg_color
 	bg[SELECTED]	= @selected_bg_color
 	bg[PRELIGHT]	= @selected_bg_color
-	fg[NORMAL]	= @text_color
-	fg[PRELIGHT]	= @text_color
-	fg[SELECTED]	= @text_color
-	text[NORMAL]	= @text_color
-	text[PRELIGHT]	= @text_color
-	text[SELECTED]	= @text_color
+	fg[NORMAL]	= @fg_color
+	fg[PRELIGHT]	= @selected_fg_color
+	fg[SELECTED]	= @selected_fg_color
+	text[NORMAL]	= @fg_color
+	text[PRELIGHT]	= @selected_fg_color
+	text[SELECTED]	= @selected_fg_color
 }
 
 style "menubar-menuitem-prelight"
@@ -321,9 +313,6 @@ style "menubar-menuitem-prelight"
 
 style "murrine-treeview"
 {
-	text[NORMAL]	= @text_color
-	fg[NORMAL]	= @text_color
-	fg[PRELIGHT]	= @text_color
   	engine "murrine" 
 	{
 		roundness = 0
@@ -331,18 +320,25 @@ style "murrine-treeview"
 	}
 }
 
+style "claws-treeview" = "murrine-treeview"
+{
+	fg[NORMAL]	= @text_color
+}
+
 style "murrine-treeview-header" = "murrine-button"
 {
 	xthickness   = 2
 	ythickness   = 1
 
-	bg[NORMAL]	 = shade (0.87, @base_color)  # Color for treeview headers.
-	bg[PRELIGHT] = shade (0.75, @base_color)  # Color for treeview header prelight.
-	bg[ACTIVE]   = shade (0.75, @base_color)  # Color for pressed-treeview.
+	bg[NORMAL]	= shade (0.75, @base_color)  # Color for treeview headers.
+	bg[PRELIGHT]	= shade (0.75, @selected_bg_color) # Color for treeview header prelight.
+	bg[ACTIVE]	= @selected_bg_color  # Color for pressed-treeview.
   	
 	engine "murrine" 
 	{
 		roundness = 0  # This makes treeview progressbars square.
+		lightborder_shade       = 1.1
+                reliefstyle         = 3
 		gradient_shades     = {0.98,1.0,1.3,1.35}
 	}
 }
@@ -555,6 +551,7 @@ class "GtkCalendar"  style "murrine-wide"
 class "GtkToolbar"   style "murrine-toolbar"
 class "GtkHandleBox*" style "murrine-toolbar"
 class "GtkStatusbar" style "resize-grip"
+class "GtkTreeView"        style "murrine-treeview"
 
 class "GtkSpinButton"  style "murrine-combo"
 class "GtkScale"       style "murrine-scale"
@@ -575,7 +572,7 @@ widget_class "*<GtkNotebook>*<GtkDrawingArea>"  style "murrine-notebook"
 widget_class "*<GtkNotebook>*<GtkLayout>"       style "murrine-notebook"
 widget_class "*<GtkNotebook>*<GtkLabel>"	style "murrine-notebook"
 
-#widget_class "*GtkVBox.GtkFrame.GtkTable"	style "murrine-angled" ##(GtkVBox.GtkFrame.GtkTable.GtkVScrollbar)
+#widget_class "*GtkVBox.GtkFrclassame.GtkTable"	style "murrine-angled" ##(GtkVBox.GtkFrame.GtkTable.GtkVScrollbar)
 #widget_class "*GtkTable*"	style "murrine-angled" #GtkWindow.GtkVBox.GtkHBox.GtkTable.GtkVBox.GtkNotebook.GtkTable.GtkVPaned.GtkVScrollbar
 #widget_class "*GtkTable*GtkVScrollbar"	style "murrine-scrollbar"
 #widget_class "*GtkTable*GtkHScrollbar"	style "murrine-scrollbar"
@@ -599,7 +596,6 @@ widget_class "*<GtkMenuBar>*"		style "murrine-menu"
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "murrine-scale"
 
 widget_class "*.<GtkFrame>.<GtkLabel>" style "murrine-frame-title"
-widget_class "*.<GtkTreeView>*"        style "murrine-treeview"
 
 widget_class "*GtkHPaned" style "murrine-paned"
 widget_class "*GtkVPaned" style "murrine-paned"
@@ -617,6 +613,7 @@ widget_class "*.<GtkList>.<GtkButton>"     style "murrine-treeview-header"
 widget_class "*.<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
 widget_class "*.<GtkCMCTree>.<GtkButton>"    style "murrine-treeview-header" # Claws-Mail treeview-headers
 widget_class "*.<GtkCMCList>.<GtkButton>"    style "murrine-treeview-header" # Claws-Mail treeview-headers
+widget_class "*Tree*"			style "claws-treeview" # Claws-Mail folder-, summary- and message-list fix
 widget_class "*GnmSimpleCanvas*"		style "murrine-treeview-header" # Gnumeric treeview-headers
 
 widget_class "*XfceHeading*"			style "xfce-header"
@@ -634,13 +631,6 @@ widget_class "*.ETree.*"	style "evolution-hack"
 widget_class "*EInfoLabel*"	style "evolution-hack"
 
 # The window of the tooltip is called "gtk-tooltip"
-################################
-# FIXME:
-# This will not work if one embeds eg. a button into the tooltip.
-# As far as I can tell right now we will need to rework the theme
-# quite a bit to get this working correctly.
-# (It will involve setting different priorities, etc.)
-################################
 widget "gtk-tooltip*" style "murrine-tooltips"
 
 ###################################################

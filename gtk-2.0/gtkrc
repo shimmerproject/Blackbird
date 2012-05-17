@@ -370,8 +370,8 @@ style "murrine-progressbar"
 	ythickness   = 0
 
 	fg[PRELIGHT] = @selected_fg_color
-	bg[NORMAL]   = shade (1.4, @bg_color)
-	bg[SELECTED]	= shade (1.4, @bg_color) #mix (0.4, @bg_color, shade (0.9, @selected_bg_color))
+	bg[NORMAL]   = shade (0.9, @base_color)
+	bg[SELECTED]	= shade (0.8, @base_color) #mix (0.4, @bg_color, shade (0.9, @selected_bg_color))
 
 	engine "murrine" {
 		gradient_shades = {1.15,1.05,1.0,0.95}

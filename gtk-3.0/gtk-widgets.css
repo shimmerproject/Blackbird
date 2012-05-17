@@ -484,6 +484,7 @@ GtkComboBox.combobox-entry .button:insensitive,
  ****************/
 .cell {
     background-color: @base_color;
+    color: @text_color;
     border-radius: 0;
     border-width: 0;
 }
@@ -650,6 +651,7 @@ column-header .button:active,
     -GtkButton-inner-border: 0;
     border-radius: 0;
     border-width: 0 1px 1px 0;
+    color: @text_color;
 
     -unico-focus-border-radius: 0;
     -unico-focus-border-color: @transparent;
@@ -666,8 +668,6 @@ column-header .button,
 		from (shade (@listview_header_gradient_a,0.99)),
 		color-stop (0.2,shade (@listview_header_gradient_a,1.02)),
 		to (shade (@listview_header_gradient_b,1.45)));
-
-    text-shadow: 0 1 alpha (shade (@bg_color, 1.25), 0.4);
 
     -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
                                            from (shade (@bg_color, 0.9)),
@@ -743,6 +743,7 @@ GtkComboBox.combobox-entry .button:insensitive {
 		color-stop (0.12, shade (@base_color, 0.98)),
 		color-stop (0.16, shade (@base_color, 1.0)),
 		to (@base_color));
+	color: @text_color;
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
@@ -1877,7 +1878,7 @@ GtkSwitch.trough:active {
  ************/
 GtkTextView {
     background-color: @base_color;
-    color: @fg_color;
+    color: @text_color;
 }
 
 /***********
@@ -1891,7 +1892,7 @@ GtkTextView {
 GtkHandleBox {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@bg_color,0.99)),
-		to (shade (@toolbar_gradient_base,0.9)));
+		to (shade (@bg_color,0.85)));
 	border-style: solid;
 	border-bottom-color: shade (@bg_color,0.71);
 	border-width: 0 0 1px 0;
@@ -1905,7 +1906,7 @@ GtkHandleBox {
 
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@bg_color,1.0)),
-		to (shade (@toolbar_gradient_final,0.85)));
+		to (shade (@bg_color,0.85)));
 
 	border-style: solid;
 	border-width: 0 0 1px 0;

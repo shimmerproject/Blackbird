@@ -1,1 +1,16 @@
-This is just an experiment with a dark version of Greybird.
+Name: Blackbird
+Summary: Desktop Suite for Xfce.
+
+Copyright 2012 Simon Steinbeiß
+Blackbird is dual-licensed as GPLv2 or later and CC-BY-SA 3.0 or later.
+
+Note/Caveat: This is a rather dark theme and unfortunately bears some of the issues that most dark themes have. A few of the known issues affect LibreOffice and QT applications. I expect to be able to fix some of them in the future, but maybe not all.
+
+The Blackbird desktop suite includes:
+– GTK2 theme
+– GTK3 theme (WIP
+– Xfwm4 theme
+
+Dependencies (GTK3>=3.3):
+– gtk2-engines-murrine (v0.90)
+– gtk3-engines-unico (v1.0.2)

@@ -58,7 +58,7 @@
 
 @define-color progressbar_through_a #c7c7c7;
 @define-color progressbar_through_b #d7d7d7;
-@define-color progressbar_through_border #a3a3a3;
+@define-color progressbar_through_border shade (@bg_color, 0.85);
 @define-color progressbar_background_a #c0cdd8;
 @define-color progressbar_background_b #9badbe;
 @define-color progressbar_border #647482;
@@ -67,8 +67,8 @@
 @define-color menuitem_background_b #7a94a9;
 
 /* User defined for this theme */
-@define-color border_color_a #afafaf;
-@define-color border_color_b #7a7a7a;
+@define-color border_color_a shade (@bg_color, 0.85);
+@define-color border_color_b shade (@bg_color, 0.67);
 @define-color scrollslider_gradient_a #d8d8d8;
 @define-color scrollslider_gradient_b #bdbdbd;
 @define-color scrollslider_border #9a9a9a;

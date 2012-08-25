@@ -195,7 +195,7 @@ GtkAssistant .sidebar {
  * Buttons *
  ***********/
 .button {
-    padding: 1px 2px 1px 2px;
+    padding: 3px;
     -unico-focus-border-color: alpha (@selected_bg_color, 0.7);
     -unico-focus-fill-color: @transparent;
     -unico-focus-outer-stroke-color: alpha (@selected_bg_color, 0.2);
@@ -751,7 +751,7 @@ GtkComboBox.combobox-entry .button:insensitive {
 		left top, left bottom,
 		from (shade (@border_color_b, 1.00)),
 		to (shade (@border_color_a, 1.00)));
-	padding: 2px;
+	padding: 3px;
 }
 
 .entry:selected,

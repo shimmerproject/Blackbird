@@ -208,7 +208,6 @@ GtkCalendar.button {
  * assistant *
  *************/
 GtkAssistant .sidebar .highlight {
-    color: @theme_text_color;
     font: bold;
 }
 
@@ -1064,8 +1063,9 @@ GtkComboBox .menuitem *:hover {
 /******************
  * pane separator *
  ******************/
+.sidebar .pane-separator,
 .pane-separator {
-    color: shade(@theme_bg_color, 0.8);
+    background-color: transparent;
     background-color: @theme_bg_color;
 }
 
@@ -1397,9 +1397,9 @@ GtkScrolledWindow.frame {
  * separator *
  *************/
 .separator {
-    color: shade(@theme_bg_color, 0.8);
-    border-color: shade(@theme_bg_color, 0.8);
+    border-width: 1px;
     border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
 }
 
 .button .separator,

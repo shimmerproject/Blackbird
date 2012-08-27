@@ -1,9 +1,3 @@
-/* 
-	AUTHOR: Simon Steinbeiß
-	LICENSE: GPL
-	DESCRIPTION: A dark theme variant of Greybird.
-*/
-
 /* default color scheme */
 @define-color bg_color #2a2a2a;
 @define-color fg_color #e6e6e6;
@@ -11,8 +5,8 @@
 @define-color text_color #444444;
 @define-color selected_bg_color #8fc1de;
 @define-color selected_fg_color #eeeeee;
-@define-color tooltip_bg_color #FCF5B8;
-@define-color tooltip_fg_color #1F1F1F;
+@define-color tooltip_bg_color #fCf5B8;
+@define-color tooltip_fg_color #1f1f1f;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -23,6 +17,10 @@
 @define-color theme_selected_fg_color @selected_fg_color;
 @define-color theme_tooltip_bg_color @tooltip_bg_color;
 @define-color theme_tooltip_fg_color @tooltip_fg_color;
+
+/* shadow effects */
+@define-color light_shadow #666;
+@define-color dark_shadow #000;
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color rgb(80, 80, 80);
@@ -37,9 +35,21 @@
 @define-color success_color #4e9a06;
 @define-color error_color #cc0000;
 
+/* window manager colors */
+@define-color wm_bg @theme_bg_color;
+@define-color wm_title_focused shade(@theme_fg_color, 1.2);
+@define-color wm_title_unfocused shade(@theme_fg_color, 2.0);
+@define-color wm_border_focused shade(@theme_bg_color, 0.7);
+@define-color wm_border_unfocused shade(@theme_bg_color, 0.8);
+
+/* lightdm greeter color scheme */
+@define-color lightdm_bg_color #242424;
+@define-color lightdm_fg_color #efefef;
+
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets.css");
-@import url("apps/misc.css");
-@import url("apps/nautilus.css");
+@import url("apps/gnome-applications.css");
+@import url("apps/granite-widgets.css");
 @import url("apps/unity.css");
-@import url("apps/unity-greeter.css");
+@import url("apps/lightdm-unity-greeter.css");
+@import url("apps/lightdm-gtk-greeter.css");

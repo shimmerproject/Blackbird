@@ -63,7 +63,7 @@
 }
 
 GtkWindow {
-    color: @theme_fg_color;
+    color: @theme_text_color;
 }
 
 * {
@@ -1008,6 +1008,7 @@ GtkComboBox .menuitem *:hover {
 
 .notebook tab GtkLabel {
     padding: 1px 1px 2px 1px;
+    color: @theme_fg_color;
 }
 
 .notebook tab.top {

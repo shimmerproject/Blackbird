@@ -851,7 +851,7 @@ GtkLabel:insensitive {
  * menu *
  ********/
 .menu {
-    background-color: shade(@theme_base_color, 0.98);
+    background-color: shade(@theme_bg_color, 1.05);
     border-width: 0;
     padding: 0;
 

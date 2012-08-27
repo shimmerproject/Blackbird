@@ -969,7 +969,7 @@ GtkComboBox .menuitem *:hover {
     background-color: shade(@theme_base_color, 0.98);
     background-image: none;
 
-    color: @theme_fg_color;
+    color: @theme_text_color;
     border-color: shade(@theme_bg_color, 0.7);
 }
 
@@ -999,7 +999,7 @@ GtkComboBox .menuitem *:hover {
 
 .notebook tab {
     background-image: none;
-    background-color: shade(@theme_bg_color, 1.65);
+    background-color: shade (@theme_bg_color, 1.65);
     border-color: shade(@theme_bg_color, 0.9);
 }
 
@@ -1586,9 +1586,11 @@ GtkTextView {
 .primary-toolbar .button:active,
 .primary-toolbar .button:insensitive {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_base_color, 0.9), 1.05)),
-                                     to (shade(shade(@theme_base_color, 0.9), 0.97)));
-    border-color: shade(@theme_bg_color, 0.7);
+                                     from (shade(shade(@theme_bg_color, 0.9), 1.05)),
+                                     to (shade(shade(@theme_bg_color, 0.9), 0.97)));
+    border-color: shade(@theme_bg_color, 0.5);
+    box-shadow: inset 1px 1px alpha(@theme_base_color, 0.15),
+                inset -1px 0 alpha(@theme_base_color, 0.15);
 }
 
 .primary-toolbar .button:active {
@@ -1600,12 +1602,11 @@ GtkTextView {
 
 .primary-toolbar .button:active:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_base_color, 0.9), 1.05)),
-                                     to (shade(shade(@theme_base_color, 0.9), 0.97)));
-    border-top-color: shade(@theme_bg_color, 0.85);
-    border-right-color: shade(@theme_bg_color, 0.78);
-    border-bottom-color: shade(@theme_bg_color, 0.7);
-    border-left-color: shade(@theme_bg_color, 0.78);
+                                     from (shade(shade(@theme_bg_color, 0.9), 1.05)),
+                                     to (shade(shade(@theme_bg_color, 0.9), 0.97)));
+   border-color: shade(@theme_bg_color, 0.5);
+    box-shadow: inset 1px 1px alpha(@theme_base_color, 0.15),
+                inset -1px 0 alpha(@theme_base_color, 0.15);
 }
 
 .primary-toolbar .button:active:insensitive,

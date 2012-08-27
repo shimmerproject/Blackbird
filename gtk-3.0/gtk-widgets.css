@@ -242,6 +242,7 @@ GtkAssistant .sidebar {
 }
 
 GtkSwitch.slider,
+GtkComboBox,
 GtkComboBox.combobox-entry .button,
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -686,6 +687,7 @@ GtkLabel,
 GtkLabel:active,
 GtkLabel:insensitive {
     background-color: transparent;
+    color: @theme_fg_color;
 }
 
 /***********

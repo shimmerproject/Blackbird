@@ -999,7 +999,7 @@ GtkComboBox .menuitem *:hover {
 
 .notebook tab {
     background-image: none;
-    background-color: @theme_bg_color;
+    background-color: shade(@theme_bg_color, 1.65);
     border-color: shade(@theme_bg_color, 0.9);
 }
 

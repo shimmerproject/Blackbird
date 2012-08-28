@@ -53,8 +53,8 @@ column-header .button:hover {
 .scrollbar.trough.vertical,
 .scrollbar.trough.horizontal {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_base_color, 0.75)),
-                                     to (shade(@theme_base_color, 0.75)));
+                                     from (shade(@theme_base_color, 0.85)),
+                                     to (shade(@theme_base_color, 0.85)));
 }
 
 .scrollbar.slider,
@@ -62,15 +62,15 @@ column-header .button:hover {
 .scrollbar.slider.vertical,
 .scrollbar.button.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(shade(@theme_bg_color, 0.9), 1.3)),
-                                     to (shade(shade(@theme_bg_color, 0.9), 1.25)));
+                                     from (shade(shade(@theme_base_color, 0.9), 0.35)),
+                                     to (shade(shade(@theme_base_color, 0.9), 0.3)));
 }
 
 .scrollbar.slider.horizontal,
 .scrollbar.button.horizontal {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 0.9), 1.3)),
-                                     to (shade(shade(@theme_bg_color, 0.9), 1.25)));
+                                     from (shade(shade(@theme_base_color, 0.9), 0.35)),
+                                     to (shade(shade(@theme_base_color, 0.9), 0.3)));
 }
 
 /****************

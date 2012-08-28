@@ -1,0 +1,37 @@
+/* fix colors for dark widgets */
+
+/*****************
+ * notebook *
+ *****************/
+
+.notebook tab {
+    background-color: shade(@theme_bg_color, 1.3);
+    background-image: none;
+    border-color: shade(@theme_bg_color, 0.9);
+}
+
+/*****************
+ * column-header *
+ *****************/
+
+column-header .button {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(shade(@theme_base_color, 0.95), 0.98)),
+                                     to (shade(shade(@theme_base_color, 0.95), 1.35)));
+}
+
+column-header .button:hover {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(shade(@theme_base_color, 0.8), 0.98)),
+                                     to (shade(shade(@theme_base_color, 0.8), 1.35)));
+}
+
+/*************
+ * scrollbar *
+ *************/
+
+.scrollbar.trough,
+.scrollbar.trough.vertical,
+.scrollbar.trough.horizontal {
+    background-color: shade(@theme_base_color, 0.65);
+}

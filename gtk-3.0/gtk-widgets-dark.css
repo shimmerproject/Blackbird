@@ -1,5 +1,9 @@
 /* fix colors for dark widgets */
 
+* {
+    -GtkRange-trough-border: 1;
+}
+
 /*****************
  * notebook *
  *****************/
@@ -48,7 +52,9 @@ column-header .button:hover {
 .scrollbar.trough,
 .scrollbar.trough.vertical,
 .scrollbar.trough.horizontal {
-    background-color: shade(@theme_base_color, 0.65);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_base_color, 0.65)),
+                                     to (shade(@theme_base_color, 0.65)));
 }
 
 /****************

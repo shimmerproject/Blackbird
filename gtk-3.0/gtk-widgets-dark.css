@@ -18,7 +18,9 @@
 .menu .menuitem:hover,
 .menubar.menuitem:hover,
 .menubar .menuitem:hover {
-    background-color: @theme_selected_bg_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_selected_bg_color, 1.0)),
+                                     to (shade(@theme_selected_bg_color, 1.0)));
 }
 
 /*****************

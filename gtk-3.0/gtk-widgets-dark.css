@@ -51,6 +51,17 @@ column-header .button:hover {
     background-color: shade(@theme_base_color, 0.65);
 }
 
+/****************
+ * row *
+ ****************/
+
+row:selected,
+row:selected:focus {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_selected_bg_color, 1.0)),
+                                     to (shade(@theme_selected_bg_color, 1.0)));
+}
+
 /***********
  * toolbar *
  ***********/

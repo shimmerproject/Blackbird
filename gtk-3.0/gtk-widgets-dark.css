@@ -10,6 +10,17 @@
     border-color: shade(@theme_bg_color, 0.9);
 }
 
+/************
+ * menuitem *
+ ************/
+
+.menuitem:hover,
+.menu .menuitem:hover,
+.menubar.menuitem:hover,
+.menubar .menuitem:hover {
+    background-color: @theme_selected_bg_color;
+}
+
 /*****************
  * column-header *
  *****************/

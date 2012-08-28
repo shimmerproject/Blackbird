@@ -79,13 +79,33 @@ column-header .button:hover {
 .progressbar row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_selected_bg_color, 0.92)),
-                                     to (shade(@theme_selected_bg_color, 0.85)));
+                                     to (shade(@theme_selected_bg_color, 0.8)));
+    border-color: shade(@theme_selected_bg_color, 0.5);
 }
 
 .progressbar.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@theme_selected_bg_color, 0.92)),
-                                     to (shade(@theme_selected_bg_color, 0.85)));
+                                     to (shade(@theme_selected_bg_color, 0.8)));
+    border-color: shade(@theme_selected_bg_color, 0.5);
+}
+
+.trough,
+.trough row,
+.trough row:hover,
+.trough row:selected,
+.trough row:selected:focus {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 0.35)),
+                                     to (shade(@theme_bg_color, 0.9)));
+    border-color: shade(@theme_bg_color, 0.5);
+}
+
+.trough.vertical {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (shade(@theme_bg_color, 0.35)),
+                                     to (shade(@theme_bg_color, 0.9)));
+    border-color: shade(@theme_bg_color, 0.5);
 }
 
 /****************

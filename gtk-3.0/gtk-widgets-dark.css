@@ -7,7 +7,6 @@
 /*****************
  * notebook *
  *****************/
-
 .notebook tab {
     background-color: shade(@theme_bg_color, 1.35);
     background-image: none;
@@ -17,7 +16,6 @@
 /************
  * menuitem *
  ************/
-
 .menuitem:hover,
 .menu .menuitem:hover,
 .menubar.menuitem:hover,
@@ -31,7 +29,6 @@
 /*****************
  * column-header *
  *****************/
-
 column-header .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_base_color, 0.95), 0.98)),
@@ -48,7 +45,6 @@ column-header .button:hover {
 /*************
  * scrollbar *
  *************/
-
 .scrollbar.trough,
 .scrollbar.trough.vertical,
 .scrollbar.trough.horizontal {
@@ -73,10 +69,28 @@ column-header .button:hover {
                                      to (shade(shade(@theme_base_color, 0.9), 0.3)));
 }
 
+/***************
+ * progressbar *
+ **************/
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focus {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_selected_bg_color, 0.92)),
+                                     to (shade(@theme_selected_bg_color, 0.85)));
+}
+
+.progressbar.vertical {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (shade(@theme_selected_bg_color, 0.92)),
+                                     to (shade(@theme_selected_bg_color, 0.85)));
+}
+
 /****************
  * row *
  ****************/
-
 row:selected,
 row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -87,7 +101,6 @@ row:selected:focus {
 /***********
  * toolbar *
  ***********/
-
 .primary-toolbar .raised .button,
 .primary-toolbar .raised.button,
 .primary-toolbar .button:hover,

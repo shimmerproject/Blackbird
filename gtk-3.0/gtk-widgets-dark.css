@@ -160,3 +160,11 @@ row:selected:focus {
    box-shadow: inset 1px 1px alpha(@light_shadow, 0.4),
                 inset -1px 0 alpha(@light_shadow, 0.4);
 }
+
+/************
+ * nautilus *
+ ************/
+.nautilus-cluebar-label {
+    font: bold;
+    color: @info_fg_color;
+}

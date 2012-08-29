@@ -709,6 +709,5 @@ class "ChromeGtkFrame" style "chrome-gtk-frame"
 # panel theming
 include "apps/panel.rc"
 # application specific theming
-include "apps/terminal.rc"
 include "apps/thunar.rc"
 include "apps/gmusicbrowser.rc"

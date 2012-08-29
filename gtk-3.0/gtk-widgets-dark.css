@@ -124,6 +124,14 @@ row:selected:focus {
                                      to (shade(@theme_selected_bg_color, 1.0)));
 }
 
+/*************
+ * separator *
+ *************/
+.sidebar.view.separator {
+    color: alpha(@theme_bg_color, 0.4);
+    border-color: alpha(@theme_bg_color, 0.4);
+}
+
 /***********
  * toolbar *
  ***********/

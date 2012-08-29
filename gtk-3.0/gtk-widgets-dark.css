@@ -23,6 +23,7 @@
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_selected_bg_color, 0.85)),
                                      to (shade(@theme_selected_bg_color, 0.8)));
+
     border-color: shade(@theme_selected_bg_color, 0.7);
 }
 
@@ -33,6 +34,7 @@ column-header .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_base_color, 0.95), 0.98)),
                                      to (shade(shade(@theme_base_color, 0.95), 1.35)));
+
     color: @theme_text_color;
 }
 
@@ -80,6 +82,7 @@ column-header .button:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_selected_bg_color, 0.92)),
                                      to (shade(@theme_selected_bg_color, 0.8)));
+
     border-color: shade(@theme_selected_bg_color, 0.5);
 }
 
@@ -87,6 +90,7 @@ column-header .button:hover {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@theme_selected_bg_color, 0.92)),
                                      to (shade(@theme_selected_bg_color, 0.8)));
+
     border-color: shade(@theme_selected_bg_color, 0.5);
 }
 
@@ -98,6 +102,7 @@ column-header .button:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 0.35)),
                                      to (shade(@theme_bg_color, 0.9)));
+
     border-color: shade(@theme_bg_color, 0.5);
 }
 
@@ -105,6 +110,7 @@ column-header .button:hover {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@theme_bg_color, 0.35)),
                                      to (shade(@theme_bg_color, 0.9)));
+
     border-color: shade(@theme_bg_color, 0.5);
 }
 
@@ -129,16 +135,20 @@ row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 0.9), 1.05)),
                                      to (shade(shade(@theme_bg_color, 0.9), 0.97)));
+
     border-color: shade(@theme_bg_color, 0.5);
-    box-shadow: inset 1px 1px alpha(@theme_base_color, 0.15),
-                inset -1px 0 alpha(@theme_base_color, 0.15);
+
+    box-shadow: inset 1px 1px alpha(@light_shadow, 0.4),
+                inset -1px 0 alpha(@light_shadow, 0.4);
 }
 
 .primary-toolbar .button:active:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@theme_bg_color, 0.9), 1.05)),
                                      to (shade(shade(@theme_bg_color, 0.9), 0.97)));
+
    border-color: shade(@theme_bg_color, 0.5);
-    box-shadow: inset 1px 1px alpha(@theme_base_color, 0.15),
-                inset -1px 0 alpha(@theme_base_color, 0.15);
+
+   box-shadow: inset 1px 1px alpha(@light_shadow, 0.4),
+                inset -1px 0 alpha(@light_shadow, 0.4);
 }

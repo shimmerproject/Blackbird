@@ -114,6 +114,17 @@ column-header .button:hover {
     border-color: shade(@theme_bg_color, 0.5);
 }
 
+GtkScale {
+    -GtkRange-slider-width: 11;
+    -GtkScale-slider-length: 11;
+}
+
+GtkScale.slider {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_base_color, 0.9)),
+                                     to (shade(@theme_base_color, 0.85)));
+}
+
 /****************
  * row *
  ****************/
@@ -127,7 +138,7 @@ row:selected:focus {
 /*************
  * separator *
  *************/
-.sidebar.view.separator {
+.view.separator {
     color: alpha(@theme_bg_color, 0.4);
     border-color: alpha(@theme_bg_color, 0.4);
 }

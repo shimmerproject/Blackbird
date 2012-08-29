@@ -510,11 +510,18 @@ style "xfce-header"
 	}
 }
 
-style "xfdesktop-windowlist" #= "murrine-menu"
+style "xfdesktop-icon-view"
 {
-	bg[NORMAL]	= @base_color
-	fg[INSENSITIVE]   = shade (0.95, @base_color)
-	text[INSENSITIVE]   = shade (0.95, @base_color)
+	font_name = "bold"
+	XfdesktopIconView::label-alpha = 0
+	XfdesktopIconView::selected-label-alpha = 60
+	fg[NORMAL] = shade (0.9, @selected_fg_color)
+	fg[ACTIVE] = @selected_fg_color
+	engine "murrine"
+	{
+		textstyle = 5
+		text_shade = 0.05
+	}
 }
 
 style "tabwin" = "murrine-dark"
@@ -617,7 +624,7 @@ widget_class "*Tree*"			style "claws-treeview" # Claws-Mail folder-, summary- an
 widget_class "*GnmSimpleCanvas*"		style "murrine-treeview-header" # Gnumeric treeview-headers
 
 widget_class "*XfceHeading*"			style "xfce-header"
-widget_class "*XfceDesktop*"			style "xfdesktop-windowlist"
+widget_class "*XfdesktopIconView*"	style "xfdesktop-icon-view"
 widget "xfwm4-tabwin*"				style "tabwin"
 widget_class "*XfceSettingsManagerDialog*<GtkScrolledWindow>*"		style "settings-manager"
 
@@ -700,8 +707,7 @@ class "ChromeGtkFrame" style "chrome-gtk-frame"
 
 
 # panel theming
-include "apps/panel.rc"
+include "apps/xfce-panel.rc"
 # application specific theming
-include "apps/terminal.rc"
 include "apps/thunar.rc"
 include "apps/gmusicbrowser.rc"

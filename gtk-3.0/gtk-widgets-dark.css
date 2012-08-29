@@ -127,7 +127,7 @@ row:selected:focus {
 /*************
  * separator *
  *************/
-.sidebar.view.separator {
+.view.separator {
     color: alpha(@theme_bg_color, 0.4);
     border-color: alpha(@theme_bg_color, 0.4);
 }

@@ -1,6 +1,1 @@
-/* XPM */
-static char * right_active_xpm[] = {
-"1 1 2 1",
-" 	c None",
-".	c #090909",
-"."};
+bottom-right-active.xpm

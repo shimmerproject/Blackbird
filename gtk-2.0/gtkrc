@@ -82,7 +82,6 @@ style "murrine-default"
 	GtkTreeView		::expander-size				= 10
 	GtkTreeView		::vertical-separator			= 0
 
-	GtkWidget		::new-tooltip-style			= 1
 	GtkWidget		::focus-line-width			= 1
 	GtkWidget		::focus-padding				= 0
 	
@@ -359,8 +358,8 @@ style "murrine-tooltips" = "murrine-wider"
 
 	engine "murrine"
 	{
-		roundness	= 0
-		trough_shades	= { 0.15, 0.3 }
+		roundness	= 5
+		rgba		= TRUE
 	}
 }
 

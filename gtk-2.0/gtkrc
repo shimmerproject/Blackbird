@@ -3,8 +3,8 @@
 # based on "Greybird" by Simon Steinbeiß
 # Description: As is the original theme, this theme is 100% free and open source.
 
-gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#8fc1de\nbase_color:#f4f4f4" # Background, base.
-gtk_color_scheme	= "fg_color:#e6e6e6\nselected_fg_color:#eeeeee\ntext_color:#444444" # Foreground, text. 
+gtk_color_scheme	= "bg_color:#2a2a2a\nselected_bg_color:#8fc1de\nbase_color:#333" # Background, base.
+gtk_color_scheme	= "fg_color:#e6e6e6\nselected_fg_color:#eeeeee\ntext_color:#fff" # Foreground, text. 
 gtk_color_scheme	= "tooltip_bg_color:#f9edbe\ntooltip_fg_color:#555555" # Tooltips.
 gtk_color_scheme	= "link_color:#709cb5" # Hyperlinks
 gtk_color_scheme	= "panel_bg:#686868" # Panel bg color

@@ -117,6 +117,7 @@ GtkSwitch.slider:insensitive {
     box-shadow: inset 1px 1px alpha(@light_shadow, 0.2),
                 inset -1px 0 alpha(@light_shadow, 0.2);
 }
+
 .button.default {
     box-shadow: inset 1px 1px alpha(@light_shadow, 0.2),
                 inset -1px 0 alpha(@light_shadow, 0.2);
@@ -135,6 +136,11 @@ GtkSwitch.slider:insensitive {
                 inset 0 1px alpha(@theme_selected_bg_color, 0.4),
                 inset -1px 0 alpha(@theme_selected_bg_color, 0.4),
                 inset 0 -1px alpha(@theme_selected_bg_color, 0.4);
+}
+
+.progressbar {
+    box-shadow: inset 1px 1px alpha(@light_shadow, 0.6),
+                inset -1px 0 alpha(@light_shadow, 0.6);
 }
 
 .entry {
@@ -216,13 +222,13 @@ GtkAssistant .sidebar .highlight {
 }
 
 GtkAssistant .sidebar {
-    background-color: mix(shade(@theme_base_color, 0.9), shade(@theme_selected_bg_color, 1.35), 0.1);
-    border-right-color: shade(@theme_bg_color, 0.9);
+    background-color: shade(@theme_bg_color, 0.9);
+    border-right-color: shade(@theme_bg_color, 0.7);
     border-radius: 0;
     border-style: solid;
     border-width: 0 1px 0 0;
     padding: 12px;
-    color: @theme_text_color;
+    color: @theme_fg_color;
 }
 
 /**************
@@ -240,16 +246,16 @@ GtkAssistant .sidebar {
     -GtkWidget-focus-padding: 1;
     -GtkWidget-focus-line-width: 0;
 
-    padding: 2px;
+    padding: 3px;
 }
 
 GtkSwitch.slider,
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 1.02), 1.05)),
-                                     to (shade(shade(@theme_bg_color, 1.02), 0.97)));
+                                     from (shade(shade(@theme_bg_color, 1.15), 1.10)),
+                                     to (shade(shade(@theme_bg_color, 1.15), 0.90)));
 
-    border-radius: 3px;
+    border-radius: 2px;
     border-top-color: shade(@theme_bg_color, 0.8);
     border-right-color: shade(@theme_bg_color, 0.72);
     border-bottom-color: shade(@theme_bg_color, 0.7);
@@ -260,8 +266,8 @@ GtkSwitch.slider,
 
 .button:active {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(shade(@theme_bg_color, 0.85), 1.05)),
-                                     to (shade(shade(@theme_bg_color, 0.85), 0.97)));
+                                     from (shade(shade(@theme_bg_color, 0.80), 1.10)),
+                                     to (shade(shade(@theme_bg_color, 0.80), 0.90)));
 
     border-color: shade(@theme_bg_color, 0.6);
 }
@@ -269,8 +275,8 @@ GtkSwitch.slider,
 .button:hover,
 .button:active:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.15)),
-                                     to (shade(@theme_bg_color, 1.07)));
+                                     from (shade(shade(@theme_bg_color, 1.13), 1.10)),
+                                     to (shade(shade(@theme_bg_color, 1.13), 0.90)));
 
     border-top-color: shade(@theme_bg_color, 0.85);
     border-right-color: shade(@theme_bg_color, 0.78);
@@ -356,7 +362,7 @@ GtkSwitch.slider,
 .primary-toolbar .linked .button:insensitive:first-child {
     border-width: 1px;
     border-right-width: 0;
-    border-radius: 3px;
+    border-radius: 2px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
@@ -373,7 +379,7 @@ GtkSwitch.slider,
 .primary-toolbar .linked .button:active:hover:last-child,
 .primary-toolbar .linked .button:insensitive:last-child {
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 2px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -390,7 +396,7 @@ GtkSwitch.slider,
 .primary-toolbar .linked .button:active:hover:only-child,
 .primary-toolbar .linked .button:insensitive:only-child {
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 /****************
@@ -572,7 +578,7 @@ GtkComboBox.combobox-entry .button:insensitive {
     border-right-color: shade(@theme_bg_color, 0.7);
     border-bottom-color: shade(@theme_bg_color, 0.72);
     border-left-color: shade(@theme_bg_color, 0.7);
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
     padding: 3px 5px 3px 5px;
     color: @theme_text_color;
@@ -599,7 +605,7 @@ GtkComboBox.combobox-entry .button:insensitive {
                                      from (shade(@theme_selected_bg_color, 1.15)),
                                      to (shade(@theme_selected_bg_color, 0.95)));
 
-    border-radius: 3px;
+    border-radius: 2px;
     border-width: 0;
     color: @theme_selected_fg_color;
 }
@@ -619,7 +625,7 @@ GtkComboBox.combobox-entry .button:insensitive {
  * frame *
  *********/
 .frame {
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.7);
 }
@@ -637,7 +643,7 @@ GtkIconView.view.cell:selected:focus {
                                      from (shade(@theme_selected_bg_color, 1.2)),
                                      to (shade(@theme_selected_bg_color, 1.0)));
 
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
     border-width: 1px;
     color: @theme_selected_fg_color;
@@ -769,7 +775,7 @@ GtkLabel:insensitive {
                                      to (shade(@theme_bg_color, 0.9)));
 
     border-color: shade(@theme_bg_color, 0.7);
-    border-radius: 3px;
+    border-radius: 2px;
     border-width: 1px;
     border-style: solid;
 }
@@ -984,7 +990,7 @@ GtkTreeMenu .menuitem * {
 .notebook {
     background-color: shade(@theme_bg_color, 1.05);
     background-image: none;
-    border-radius: 3px;
+    border-radius: 2px;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
     padding: 0;
@@ -1007,7 +1013,7 @@ GtkTreeMenu .menuitem * {
 
 .notebook tab.top {
     padding: 3px;
-    border-radius: 3px 3px 0 0;
+    border-radius: 2px 2px 0 0;
 }
 
 .notebook tab.top:active {
@@ -1017,7 +1023,7 @@ GtkTreeMenu .menuitem * {
 
 .notebook tab.right {
     padding: 3px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 2px 2px 0;
 }
 
 .notebook tab.right:active {
@@ -1027,7 +1033,7 @@ GtkTreeMenu .menuitem * {
 
 .notebook tab.bottom {
     padding: 3px;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 2px 2px;
 }
 
 .notebook tab.bottom:active {
@@ -1037,7 +1043,7 @@ GtkTreeMenu .menuitem * {
 
 .notebook tab.left {
     padding: 3px;
-    border-radius: 3px 0 0 3px;
+    border-radius: 2px 0 0 2px;
 }
 
 .notebook tab.left:active {
@@ -1069,22 +1075,22 @@ GtkProgressBar {
 .progressbar row:selected,
 .progressbar row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_selected_bg_color, 1.15)),
-                                     to (shade(@theme_selected_bg_color, 0.95)));
+                                     from (shade(@theme_selected_bg_color, 0.90)),
+                                     to (shade(@theme_selected_bg_color, 1.13)));
 
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@theme_selected_bg_color, 0.7);
+    border-color: shade(shade(@theme_bg_color, 0.75), 0.9);
 }
 
 .progressbar.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@theme_selected_bg_color, 1.15)),
-                                     to (shade(@theme_selected_bg_color, 0.95)));
+                                     from (shade(@theme_selected_bg_color, 0.90)),
+                                     to (shade(@theme_selected_bg_color, 1.13)));
 
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@theme_selected_bg_color, 0.7);
+    border-color: shade(shade(@theme_bg_color, 0.75), 0.9);
 }
 
 .trough,
@@ -1093,8 +1099,8 @@ GtkProgressBar {
 .trough row:selected,
 .trough row:selected:focus {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 0.95)),
-                                     to (shade(@theme_bg_color, 1.15)));
+                                     from (shade(shade(@theme_bg_color, 0.75), 1.0)),
+                                     to (shade(shade(@theme_bg_color, 0.75), 0.9)));
 
     border-style: solid;
     border-width: 1px;
@@ -1103,8 +1109,8 @@ GtkProgressBar {
 
 .trough.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@theme_bg_color, 0.95)),
-                                     to (shade(@theme_bg_color, 1.15)));
+                                     from (shade(shade(@theme_bg_color, 0.75), 1.0)),
+                                     to (shade(shade(@theme_bg_color, 0.75), 0.9)));
 
     border-color: shade(@theme_bg_color, 0.7);
 }
@@ -1136,7 +1142,7 @@ GtkLevelBar.vertical {
 
 .level-bar.indicator-continuous.fill-block {
     padding: 2px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 .level-bar.indicator-discrete.fill-block.horizontal {
@@ -1152,19 +1158,19 @@ GtkLevelBar.vertical {
    on the widget
 
 .level-bar.indicator-discrete.fill-block.horizontal:first-child {
-    border-radius: 3px 0 0 3px;
+    border-radius: 2px 0 0 2px;
 }
 
 .level-bar.indicator-discrete.fill-block.horizontal:last-child {
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 2px 2px 0;
 }
 
 .level-bar.indicator-discrete.fill-block.vertical:first-child {
-    border-radius: 3px 3px 0 0;
+    border-radius: 2px 2px 0 0;
 }
 
 .level-bar.indicator-discrete.fill-block.vertical:last-child {
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 2px 2px;
 }
 
 */
@@ -1292,20 +1298,12 @@ GtkScale.trough.vertical:insensitive,
 }
 
 .scrollbar.trough,
-.scrollbar.trough.vertical {
-    background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@theme_bg_color, 1.1)),
-                                     to (shade(@theme_bg_color, 1.3)));
+.scrollbar.trough.vertical,
+.scrollbar.trough.horizontal {
+    background-image: none;
+    background-color: @theme_base_color;
 
     border-width: 0;
-    border-radius: 0
-}
-
-.scrollbar.trough.horizontal {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_bg_color, 1.1)),
-                                     to (shade(@theme_bg_color, 1.3)));
-
     border-radius: 0;
 }
 
@@ -1430,7 +1428,8 @@ GtkComboBox .separator {
 .sidebar,
 .sidebar.view,
 .sidebar .view {
-    background-color: mix(shade(@theme_base_color, 0.9), shade(@theme_selected_bg_color, 1.35), 0.1);
+    background-color: shade(@theme_bg_color, 0.9);
+    color: @theme_fg_color;
 }
 
 .sidebar .frame {
@@ -1543,7 +1542,7 @@ GtkTextView {
  ***********/
 .toolbar {
     border-style: none;
-    padding: 2px;
+    padding: 3px;
 }
 
 /* primary-toolbar */

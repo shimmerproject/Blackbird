@@ -176,8 +176,8 @@ NautilusNotebook.notebook NautilusQueryEditor .primary-toolbar.toolbar:only-chil
 TerminalScreen {
     -TerminalScreen-background-darkness: 0.9;
 
-    background-color: #333;
-    color: #eee;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
 }
 
 TerminalWindow GtkNotebook.notebook {
@@ -188,13 +188,13 @@ TerminalWindow GtkNotebook.notebook {
 
 TerminalWindow .scrollbars-junction,
 TerminalWindow .scrollbar.trough {
-    background-color: #333;
+    background-color: @theme_bg_color;
 }
 
 TerminalWindow .scrollbar.button,
 TerminalWindow .scrollbar.button:active,
 TerminalWindow .scrollbar.button:active:hover {
-    color: shade(#333, 0.6);
+    color: shade(@theme_bg_color, 0.6);
 }
 
 /*********

@@ -2,10 +2,10 @@
 @define-color theme_bg_color #383838;
 @define-color theme_fg_color #dedede;
 @define-color theme_base_color #333333;
-@define-color theme_text_color #dedede;
+@define-color theme_text_color #eeeeee;
 @define-color theme_selected_bg_color #5588ee;
 @define-color theme_selected_fg_color #ffffff;
-@define-color theme_tooltip_bg_color #000000;
+@define-color theme_tooltip_bg_color #333333;
 @define-color theme_tooltip_fg_color #dedede;
 
 /* shadow effects */
@@ -21,7 +21,7 @@
 @define-color question_bg_color rgb (85, 136, 238);
 @define-color error_fg_color rgb (255, 255, 255);
 @define-color error_bg_color rgb (237, 54, 54);
-@define-color link_color #58e;
+@define-color link_color #5588ee;
 @define-color success_color #4e9a06;
 @define-color error_color #cc0000;
 

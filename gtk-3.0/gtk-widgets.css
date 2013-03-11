@@ -18,7 +18,7 @@
     -GtkButton-inner-border: 1;
     -GtkButton-interior-focus: true;
     -GtkCheckButton-indicator-size: 16;
-    -GtkCheckMenuItem-indicator-size: 12;
+    -GtkCheckMenuItem-indicator-size: 14;
     -GtkEntry-inner-border: 1;
     -GtkEntry-progress-border: 0;
     -GtkExpander-expander-size: 11;
@@ -228,7 +228,10 @@ GtkAssistant .sidebar {
                                      to (shade(shade(@theme_bg_color, 1.06), 0.90)));
 }
 
-.button:focus {
+.button:focus,
+.button:hover:focus,
+.button:active:focus,
+.button:active:hover:focus {
     border-color: @theme_selected_bg_color;
 }
 
@@ -460,6 +463,10 @@ GtkDrawingArea {
     background-color: transparent;
 }
 
+GtkDrawingArea:insensitive {
+    background-color: @theme_bg_color;
+}
+
 /************
 * gucharmap *
 *************/
@@ -490,12 +497,13 @@ GtkCalendar {
 }
 
 GtkCalendar:inconsistent {
-    color: alpha(@theme_fg_color, 0.6);
+    color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
 
 GtkCalendar.view,
 GtkCalendar.header,
 GtkCalendar.button,
+GtkCalendar.button:hover,
 GtkCalendar.button:insensitive {
     border-width: 0;
     background-color: transparent;
@@ -506,7 +514,6 @@ GtkCalendar.button:insensitive {
 GtkCalendar.highlight {
     border-width: 0;
     background-color: transparent;
-    color: shade(@theme_fg_color, 0.6);
 }
 
 /******************
@@ -556,6 +563,7 @@ GtkComboBox.combobox-entry .button:insensitive {
     color: @theme_text_color;
 }
 
+.entry:active,
 .entry:focus {
     border-color: shade(@theme_selected_bg_color, 0.8);
 }
@@ -938,6 +946,10 @@ GtkTreeMenu .menuitem * {
 .menuitem.radio:active {
     border-style: none;
     background-color: transparent;
+}
+
+.menuitem GtkCalendar:inconsistent {
+    color: mix(@menu_fg_color, @menu_bg_color, 0.5);
 }
 
 .menuitem GtkCalendar.button {
@@ -1377,9 +1389,28 @@ GtkScrolledWindow GtkViewport.frame {
     border-color: transparent;
 }
 
+.toolbar .button .separator,
+.toolbar .button.separator,
+.primary-toolbar .button .separator,
+.primary-toolbar .button.separator {
+    border-color: transparent;
+}
+
+.toolbar .button .separator:insensitive,
+.toolbar .button.separator:insensitive,
+.primary-toolbar .button .separator:insensitive,
+.primary-toolbar .button.separator:insensitive {
+    border-color: transparent;
+}
+
 .menuitem.separator {
     -GtkMenuItem-horizontal-padding: 0;
     -GtkWidget-separator-height: 1;
+
+    border-image: -gtk-gradient(linear,
+                     left top, left bottom,
+                     from (shade(@menu_bg_color, 1.12)),
+                     to (shade(@menu_bg_color, 1.12))) 1;
 
     border-color: shade(@menu_bg_color, 1.12);
     color: shade(@menu_bg_color, 1.12);
@@ -1687,8 +1718,10 @@ GtkTextView {
 }
 
 .primary-toolbar GtkComboBox,
+.primary-toolbar GtkComboBox .cell 
 .primary-toolbar .button *,
-.primary-toolbar .button {
+.primary-toolbar .button,
+.toolbar GtkComboBox .cell {
     padding: 3px;
     border-width: 1px;
     border-color: transparent;
@@ -1710,7 +1743,8 @@ GtkTextView {
 }
 
 .primary-toolbar .button:hover,
-.toolbar .button:hover {
+.toolbar .button:hover,
+.toolbar GtkComboBox .cell:hover {
     border-color: shade(@toolbar_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@toolbar_bg_color, 1.06), 1.40)),
@@ -1730,6 +1764,17 @@ GtkTextView {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(shade(@toolbar_bg_color, 1.06), 1.05)),
                                      to (shade(shade(@toolbar_bg_color, 1.06), 0.90)));
+}
+
+.primary-toolbar .button:focus,
+.primary-toolbar .button:hover:focus,
+.primary-toolbar .button:active:focus,
+.primary-toolbar .button:active:hover:focus,
+.toolbar .button:focus,
+.toolbar .button:hover:focus,
+.toolbar .button:active:focus,
+.toolbar .button:active:hover:focus {
+    border-color: @theme_selected_bg_color;
 }
 
 .primary-toolbar .button:insensitive,
@@ -1790,6 +1835,7 @@ GtkTextView {
     padding: 1px;
     border-width: 1px 0 1px 1px;
     border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
     border-radius: 0;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 1.12)),

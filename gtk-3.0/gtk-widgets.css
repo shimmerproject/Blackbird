@@ -965,6 +965,11 @@ GtkTreeMenu .menuitem * {
     color: @menu_fg_color;
 }
 
+.menuitem .entry:active,
+.menuitem .entry:focus {
+    border-color: shade(@theme_selected_bg_color, 0.8);
+}
+
 .menuitem .accelerator {
     color: alpha(@menu_fg_color, 0.6);
 }
@@ -1597,14 +1602,21 @@ GtkComboBox .separator {
     background-repeat: no-repeat;
 }
 
-.menu.spinner,
-.primary-toolbar .spinner,
-.primary-toolbar .spinner {
-    color: @theme_selected_bg_color;
+.spinner:active {
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.875)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.750)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.625)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.500)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.375)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.250)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(alpha(currentColor, 0.125)), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(currentColor), to(transparent));
+    animation: spinner 1s infinite linear;
 }
 
-.spinner:active {
-    animation: spinner 1s infinite linear;
+.menu.spinner,
+.primary-toolbar .spinner {
+    color: @theme_selected_bg_color;
 }
 
 /*******

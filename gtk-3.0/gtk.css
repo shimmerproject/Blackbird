@@ -26,6 +26,8 @@
 @define-color error_color #cc0000;
 
 /* widget colors */
+@define-color titlebar_bg_color @theme_bg_color;
+@define-color titlebar_fg_color @theme_fg_color;
 @define-color menubar_bg_color @theme_bg_color;
 @define-color menubar_fg_color @theme_fg_color;
 @define-color toolbar_bg_color @theme_bg_color;
@@ -57,3 +59,4 @@
 @import url("apps/gnome-applications.css");
 @import url("apps/granite-widgets.css");
 @import url("apps/unity.css");
+@import url("apps/xfce.css");

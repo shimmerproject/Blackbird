@@ -4252,7 +4252,7 @@ GtkBubbleWindow .toolbar {
 }
 
 .tiled .titlebar {
-    border-radius: 3;
+    border-radius: 3px;
 }
 
 .maximized .titlebar {

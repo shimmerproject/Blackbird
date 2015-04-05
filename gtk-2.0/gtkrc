@@ -320,7 +320,7 @@ style "evolve-menu" {
 	fg[PRELIGHT] = @selected_fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @selected_fg_color
-	fg[INSENSITIVE] = mix (0.85, shade (0.75, @menu_bg_color), @menu_fg_color)
+	fg[INSENSITIVE] = mix (0.35, shade (0.75, @menu_bg_color), @menu_fg_color)
 
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @selected_fg_color

@@ -495,21 +495,18 @@ style "xfdesktop-windowlist" {
 }
 
 style "xfdesktop-icon-view" {
-    font_name = "normal"
-    XfdesktopIconView::label-alpha = 30
-    XfdesktopIconView::selected-label-alpha = 60
-    XfdesktopIconView::shadow-color = shade (1.05, @fg_color)
-    XfdesktopIconView::selected-shadow-color = @fg_color
-    XfdesktopIconView::shadow-x-offset = -1
-    XfdesktopIconView::selected-shadow-x-offset = -1
-    XfdesktopIconView::shadow-y-offset = -1
-    XfdesktopIconView::selected-shadow-y-offset = -1
-    fg[NORMAL] = @selected_fg_color
+    XfdesktopIconView::label-alpha = 20
+    XfdesktopIconView::selected-label-alpha = 80
+    XfdesktopIconView::shadow-color = @tooltip_bg_color
+    XfdesktopIconView::selected-shadow-color = @tooltip_bg_color
+    XfdesktopIconView::shadow-x-offset = 1
+    XfdesktopIconView::selected-shadow-x-offset = 1
+    XfdesktopIconView::shadow-y-offset = 1
+    XfdesktopIconView::selected-shadow-y-offset = 1
+    fg[NORMAL] = shade (0.9, @selected_fg_color)
     fg[ACTIVE] = @selected_fg_color
     engine "murrine"
     {
-	textstyle = 0
-	text_shade = 0.05
     }
 }
 

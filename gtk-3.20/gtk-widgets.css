@@ -2349,9 +2349,13 @@ spinbutton.vertical.entry {
 /*************
  * statusbar *
  *************/
-GtkStatusbar {
+statusbar {
     padding: 3px;
     color: @theme_fg_color;
+}
+
+statusbar frame {
+    border-width: 0;
 }
 
 /**********

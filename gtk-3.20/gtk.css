@@ -5,7 +5,7 @@
 @define-color theme_text_color #eeeeee;
 @define-color theme_selected_bg_color #5588ee;
 @define-color theme_selected_fg_color #ffffff;
-@define-color theme_tooltip_bg_color #333333;
+@define-color theme_tooltip_bg_color #111111;
 @define-color theme_tooltip_fg_color #dedede;
 
 /* shadow effects */
@@ -22,6 +22,7 @@
 @define-color error_fg_color rgb (255, 255, 255);
 @define-color error_bg_color rgb (237, 54, 54);
 @define-color link_color #5588ee;
+@define-color link_visited_color #2a76c6;
 @define-color success_color #4e9a06;
 @define-color error_color #cc0000;
 
@@ -36,6 +37,7 @@
 @define-color menu_fg_color @theme_fg_color;
 @define-color panel_bg_color @theme_bg_color;
 @define-color panel_fg_color @theme_fg_color;
+@define-color tab_checked_color #215d9c;
 
 /* osd */
 @define-color osd_base #333;

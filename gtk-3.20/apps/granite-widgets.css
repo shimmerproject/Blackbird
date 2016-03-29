@@ -7,9 +7,6 @@
 }
 
 .dynamic-notebook .notebook {
-    -GtkNotebook-tab-overlap: 3px;
-    -GtkNotebook-initial-gap: 5px;
-
     border-width: 1px 0 0 0;
     border-radius: 0;
 }
@@ -96,7 +93,7 @@
     background-image: none;
 }
 
-.content-view .button:insensitive {
+.content-view .button:disabled {
     background-color: alpha(@theme_base_color, 0.0);
     background-image: none;
 }
@@ -252,7 +249,7 @@ GraniteWidgetsPopOver .entry:focus {
 }
 
 .composited-indicator.menuitem:active,
-.composited-indicator.menuitem:prelight {
+.composited-indicator.menuitem:hover {
     border-style: none;
     background-image: none;
 }

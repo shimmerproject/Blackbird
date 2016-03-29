@@ -87,7 +87,7 @@ XfceHeading,
 }
 
 .xfce4-panel .menu {
-    -gtk-image-effect: none;
+    -gtk-icon-effect: none;
 
     text-shadow: none;
 }

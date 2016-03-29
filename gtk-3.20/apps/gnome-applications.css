@@ -47,8 +47,6 @@ PanelAppletFrame {
 }
 
 PanelApplet .button {
-    -GtkButton-inner-border: 2;
-
     border-width: 0 1px;
     border-radius: 0;
     border-color: transparent;
@@ -68,8 +66,8 @@ PanelApplet .button:active {
                                      to (shade(@panel_bg_color, 0.82)));
 }
 
-PanelApplet .button:prelight,
-PanelApplet .button:active:prelight {
+PanelApplet .button:hover,
+PanelApplet .button:active:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@panel_bg_color, 1.40)),
                                      to (shade(@panel_bg_color, 1.05)));
@@ -104,7 +102,7 @@ WnckPager, WnckTasklist {
 }
 
 .nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:hover,
 .nautilus-desktop.nautilus-canvas-item:selected {
     text-shadow: none;
 }

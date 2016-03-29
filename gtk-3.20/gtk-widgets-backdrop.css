@@ -11,12 +11,12 @@
  * common effects *
  ******************/
 /* remove shadows */
-.button:active:backdrop,
-.primary-toolbar .button:active:backdrop {
+button:active:backdrop,
+.primary-toolbar button:active:backdrop {
     box-shadow: none;
 }
 
-.entry:backdrop {
+entry:backdrop {
     box-shadow: none;
 }
 
@@ -24,27 +24,27 @@
  * button *
  **********/
 /* default button */
-.button.default:backdrop {
+button:backdrop {
     border-color: mix(shade(@theme_bg_color, 0.8), @backdrop_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix(shade(shade(@theme_bg_color, 1.06), 1.12), @backdrop_selected_bg_color, 0.3)),
                                      to (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)));
 }
 
-.button.default:hover:backdrop {
+button:hover:backdrop {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix(shade(shade(@theme_bg_color, 1.06), 1.40), @backdrop_selected_bg_color, 0.3)),
                                      to (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.3)));
 }
 
-.button.default:active:backdrop {
+button:active:backdrop {
     border-color: mix(shade(@theme_bg_color, 0.7), @backdrop_selected_bg_color, 0.3);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)),
                                      to (mix(shade(shade(@theme_bg_color, 1.06), 0.82), @backdrop_selected_bg_color, 0.3)));
 }
 
-.button.default:active:hover:backdrop {
+button:active:hover:backdrop {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.1)),
                                      to (mix(shade(shade(@theme_bg_color, 1.06), 0.90), @backdrop_selected_bg_color, 0.1)));
@@ -134,28 +134,28 @@ GtkIconView.view.cell:selected:focus:backdrop {
     background-image: none;
 }
 
-.scale.highlight.left:backdrop {
+scale.highlight.left:backdrop {
     border-color: shade(@backdrop_selected_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                     from (shade(@backdrop_selected_bg_color, 1.1)),
                                     to (shade(@backdrop_selected_bg_color, 0.9)));
 }
 
-.scale.highlight.bottom:backdrop {
+scale.highlight.bottom:backdrop {
     border-color: shade(@backdrop_selected_bg_color, 0.8);
     background-image: -gtk-gradient(linear, left top, right top,
                                     from (shade(@backdrop_selected_bg_color, 1.1)),
                                     to (shade(@backdrop_selected_bg_color, 0.9)));
 }
 
-.scale.highlight.left:insensitive:backdrop {
+scale.highlight.left:disabled:backdrop {
     border-color: shade(@theme_bg_color, 0.9);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 0.99)),
                                      to (shade(@theme_bg_color, 0.95)));
 }
 
-.scale.highlight.bottom:insensitive:backdrop {
+scale.highlight.bottom:disabled:backdrop {
     border-color: shade(@theme_bg_color, 0.9);
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_bg_color, 0.99)),

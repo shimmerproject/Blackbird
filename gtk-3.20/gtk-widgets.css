@@ -2318,29 +2318,29 @@ spinbutton.vertical.entry {
     to { -gtk-icon-transform: rotate(1turn); }
 }
 
-.spinner {
+spinner {
     -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
     color: @theme_fg_color;
     opacity: 0;
 }
 
-.spinner:checked {
+spinner:checked {
     animation: spinner 1s infinite linear;
     opacity: 1;
 }
 
-.spinner:checked:backdrop {
+spinner:checked:backdrop {
     color: @theme_fg_color;
 }
 
-.spinner:checked:disabled {
+spinner:checked:disabled {
     opacity: 0.5;
 }
 
-.menu.spinner,
-.menu .spinner,
-.menu .spinner:hover,
-.primary-toolbar .spinner {
+.menu spinner,
+menu spinner,
+.menu spinner:hover,
+.primary-toolbar spinner {
     color: @theme_selected_bg_color;
     border: none;
     box-shadow: none;

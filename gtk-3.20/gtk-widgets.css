@@ -365,12 +365,7 @@ row:selected:focus {
 checkbutton,
 radiobutton,
 checkbutton:disabled,
-radiobutton:disabled {
-    border-style: none;
-    background-color: transparent;
-    color: @theme_text_color;
-}
-
+radiobutton:disabled,
 check,
 radio,
 check:disabled,
@@ -378,8 +373,9 @@ radio:disabled {
     min-height: 16px;
     min-width: 16px;
     border: 1px solid;
-    border-color: @theme_base_color;
-    background-color: shade(@theme_bg_color, 0.80);
+    border-style: none;
+    background-color: transparent;
+    color: @theme_text_color;
 }
 
 check:hover,

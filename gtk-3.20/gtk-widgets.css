@@ -662,11 +662,11 @@ label:disabled {
 }
 
 label:disabled:backdrop {
-    color: shade(@theme_bg_color, 1.02);
+    color: shade(@theme_text_color, 0.50);
 }
 
 label:backdrop {
-    color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 /************

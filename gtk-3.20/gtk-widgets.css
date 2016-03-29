@@ -1247,6 +1247,24 @@ headerbar .primary-toolbar .menu,
     color: @menu_fg_color;
 }
 
+menu menuitem arrow,
+.menu menuitem arrow {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+menu menuitem arrow:dir(ltr),
+.menu menuitem arrow:dir(ltr) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    margin-left: 10px;
+}
+
+menu menuitem arrow:dir(rtl),
+.menu menuitem arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+    margin-right: 10px;
+}
+
 /***********
  * menubar *
  ***********/
@@ -4035,7 +4053,7 @@ progressbar.osd.progressbar {
 /******************************
  * destructive action buttons *
  ******************************/
-.destructive-actionbutton {
+button.destructive-action {
     border-width: 1px;
     border-style: solid;
     border-color: shade(@error_color, 0.8);
@@ -4049,7 +4067,7 @@ progressbar.osd.progressbar {
     box-shadow: none;
 }
 
-.destructive-actionbutton:hover {
+button.destructive-action:hover {
     border-color: shade(@error_color, 0.8);
     background-image: linear-gradient(to bottom,
                                       shade(mix(@theme_base_color, @error_color, 0.7), 1.05),
@@ -4057,8 +4075,8 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.destructive-actionbutton:active,
-.destructive-actionbutton:checked {
+button.destructive-action:active,
+button.destructive-action:checked {
     border-color: shade(@error_color, 0.8);
     background-image: linear-gradient(to bottom,
                                       shade(shade(@error_color, 1.2), 1.05),
@@ -4066,8 +4084,8 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.destructive-actionbutton:hover:active,
-.destructive-actionbutton:hover:checked {
+button.destructive-action:hover:active,
+button.destructive-action:hover:checked {
     border-color: shade(@error_color, 0.7);
     background-image: linear-gradient(to bottom,
                                       shade(mix(@theme_base_color, @error_color, 0.7), 1.05),
@@ -4078,7 +4096,7 @@ progressbar.osd.progressbar {
 /******************************
  * suggested action buttons *
  ******************************/
-.suggested-actionbutton {
+button.suggested-action {
     border-width: 1px;
     border-style: solid;
     border-color: shade(@theme_selected_bg_color, 0.8);
@@ -4091,7 +4109,7 @@ progressbar.osd.progressbar {
     color: @theme_fg_color;
 }
 
-.suggested-actionbutton:hover {
+button.suggested-action:hover {
     border-color: shade(@theme_selected_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.15),
@@ -4099,8 +4117,8 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.suggested-actionbutton:active,
-.suggested-actionbutton:checked {
+button.suggested-action:active,
+button.suggested-action:checked {
     border-color: shade(@theme_selected_bg_color, 0.7);
     background-image: linear-gradient(to bottom,
                                       shade(shade(@theme_bg_color, 0.85), 1.05),
@@ -4108,8 +4126,8 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.suggested-actionbutton:hover:active,
-.suggested-actionbutton:hover:checked {
+button.suggested-action:hover:active,
+button.suggested-action:hover:checked {
     border-color: shade(@theme_selected_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
                                       shade(@theme_bg_color, 1.15),
@@ -4195,8 +4213,8 @@ progressbar.osd.progressbar {
 }
 
 /* suggested button */
-.selection-modeheaderbar .suggested-actionbutton,
-.selection-modetoolbar .suggested-actionbutton,
+.selection-modeheaderbar button.suggested-action,
+.selection-modetoolbar button.suggested-action,
 .selection-modetoolbar GtkToolButton.suggested-action button {
     border-width: 1px;
     border-style: solid;
@@ -4210,8 +4228,8 @@ progressbar.osd.progressbar {
     color: @theme_fg_color;
 }
 
-.selection-modeheaderbar .suggested-actionbutton:hover,
-.selection-modetoolbar .suggested-actionbutton:hover,
+.selection-modeheaderbar button.suggested-action:hover,
+.selection-modetoolbar button.suggested-action:hover,
 .selection-modetoolbar GtkToolButton.suggested-action button:hover {
     border-color: shade(@theme_selected_bg_color, 0.8);
     background-image: linear-gradient(to bottom,
@@ -4220,10 +4238,10 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.selection-modeheaderbar .suggested-actionbutton:active,
-.selection-modeheaderbar .suggested-actionbutton:checked,
-.selection-modetoolbar .suggested-actionbutton:active,
-.selection-modetoolbar .suggested-actionbutton:checked,
+.selection-modeheaderbar button.suggested-action:active,
+.selection-modeheaderbar button.suggested-action:checked,
+.selection-modetoolbar button.suggested-action:active,
+.selection-modetoolbar button.suggested-action:checked,
 .selection-modetoolbar GtkToolButton.suggested-action:active,
 .selection-modetoolbar GtkToolButton.suggested-action:checked {
     border-color: shade(@theme_selected_bg_color, 0.7);
@@ -4233,10 +4251,10 @@ progressbar.osd.progressbar {
                                       );
 }
 
-.selection-modeheaderbar .suggested-actionbutton:hover:active,
-.selection-modeheaderbar .suggested-actionbutton:hover:checked,
-.selection-modetoolbar .suggested-actionbutton:hover:active,
-.selection-modetoolbar .suggested-actionbutton:hover:checked,
+.selection-modeheaderbar button.suggested-action:hover:active,
+.selection-modeheaderbar button.suggested-action:hover:checked,
+.selection-modetoolbar button.suggested-action:hover:active,
+.selection-modetoolbar button.suggested-action:hover:checked,
 .selection-modetoolbar GtkToolButton.suggested-action button:hover:active,
 .selection-modetoolbar GtkToolButton.suggested-action button:hover:checked {
     border-color: shade(@theme_selected_bg_color, 0.8);

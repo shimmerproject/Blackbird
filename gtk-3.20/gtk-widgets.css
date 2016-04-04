@@ -1727,7 +1727,8 @@ notebook > header > tabs > arrow:disabled {
     -gtk-icon-shadow: none;
 }
 
-notebook > header tab {
+notebook > header tab,
+notebook > header tab:backdrop {
     min-height: 24px;
     min-width: 24px;
     padding: 3px 8px;
@@ -1736,6 +1737,10 @@ notebook > header tab {
     font-weight: bold;
     border-width: 1px;
     border-color: transparent;
+}
+
+notebook > header tab > label:backdrop {
+    color: shade(@theme_text_color, 0.70);
 }
 
 notebook > header tab:hover {
@@ -1747,35 +1752,25 @@ notebook > header tab:hover.reorderable-page {
     background-color: rgba(57, 63, 63, 0.2);
 }
 
-notebook > header tab:backdrop {
-    color: @panel_bg_color;
-}
-
 notebook > header tab:backdrop.reorderable-page {
     border-color: transparent;
     background-color: transparent;
 }
 
-notebook > header tab:checked {
+notebook > header tab:checked,
+notebook > header tab:backdrop:checked,
+notebook > header tab:checked > label:backdrop {
     background-color: @panel_bg_color;
     color: @theme_selected_fg_color
 }
 
-notebook > header tab:checked.reorderable-page {
+notebook > header tab:checked.reorderable-page,
+notebook > header tab:backdrop:checked.reorderable-page {
     border-color: @dark_shadow;
     background-color: @panel_bg_color;
 }
 
 notebook > header tab:checked.reorderable-page:hover {
-    background-color: @panel_bg_color;
-}
-
-notebook > header tab:backdrop:checked {
-    color: @theme_selected_fg_color
-}
-
-notebook > header tab:backdrop:checked.reorderable-page {
-    border-color: @dark_shadow;
     background-color: @panel_bg_color;
 }
 

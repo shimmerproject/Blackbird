@@ -2027,51 +2027,58 @@ levelbar block.empty {
 }
 
 scale {
-    padding: 0;
     min-height: 10px;
     min-width: 10px;
-    border: 1px;
-    border-radius: 3px;
+    padding: 8px;
+}
+
+scale trough,
+scale fill,
+scale trough:backdrop,
+scale fill:backdrop {
+    border: 1px solid @dark_shadow;
+    border-radius: 1px;
+    background-color: @theme_bg_color;
+    box-shadow: none;
+}
+
+scale trough:disabled,
+scale fill:disabled,
+scale trough:backdrop:disabled,
+scale fill:backdrop:disabled {
+    border-color: @dark_shadow;
+    background-color: shade(@theme_bg_color, 0.7);
+}
+
+scale highlight,
+scale highlight:backdrop {
+    border: 1px solid shade(@theme_selected_bg_color, 0.7);
+    border-radius: 1px;
+    background-image: linear-gradient(to bottom,
+                                      shade(shade(@theme_selected_bg_color, 0.9), 1.1),
+                                      shade(shade(@theme_selected_bg_color, 0.9), 0.9)
+                                      );
+}
+
+scale highlight:disabled,
+scale highlight:backdrop:disabled {
+    border-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_selected_bg_color, 0.1),
+                                      shade(@theme_selected_bg_color, 0.3)
+                                      );
+
+}
+
+scale fill,
+scale highlight {
+    margin: -1px;
 }
 
 scale slider {
-    min-height: 4px;
-    min-width: 4px;
-    border-radius: 7px;
-    background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 1.30), 1.2),
-                                      shade(shade(@theme_bg_color, 1.30), 0.97)
-                                      );
-
-    /* we will draw the border using box shadow for now */
-    box-shadow: inset 1px 0 shade(@theme_bg_color, 0.7),
-                inset 0 1px shade(@theme_bg_color, 0.7),
-                inset -1px 0 shade(@theme_bg_color, 0.6),
-                inset 0 -1px shade(@theme_bg_color, 0.6);
-}
-
-scale slider:hover {
-    background-image: linear-gradient(to bottom,
-                                      shade(mix(@theme_bg_color, shade(@theme_selected_bg_color, 0.9), 0.4), 1.2),
-                                      shade(mix(@theme_bg_color, shade(@theme_selected_bg_color, 0.9), 0.4),0.97)
-                                      );
-
-    box-shadow: inset 1px 0 shade(@theme_bg_color, 0.6),
-                inset 0 1px shade(@theme_bg_color, 0.6),
-                inset -1px 0 shade(@theme_bg_color, 0.5),
-                inset 0 -1px shade(@theme_bg_color, 0.5);
-}
-
-scale slider:disabled {
-    background-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 0.99),
-                                      shade(@theme_bg_color, 0.95)
-                                      );
-
-    box-shadow: inset 1px 0 shade(@theme_bg_color, 0.8),
-                inset 0 1px shade(@theme_bg_color, 0.8),
-                inset -1px 0 shade(@theme_bg_color, 0.8),
-                inset 0 -1px shade(@theme_bg_color, 0.8);
+    min-height: 12px;
+    min-width: 12px;
+    margin: -6px;
 }
 
 scale.fine-tune.horizontal {
@@ -2086,37 +2093,122 @@ scale.fine-tune.vertical {
     min-width: 16px;
 }
 
-scale fill {
-    border-color: shade(@theme_bg_color, 0.7);
+scale.fine-tune slider {
+    margin: -6px;
+}
+
+scale.fine-tune fill,
+scale.fine-tune highlight,
+scale.fine-tune trough {
+    border-radius: 5px;
+    -gtk-outline-radius: 7px;
 }
 
 scale trough {
-    margin: 5px 0;
-    border-color: shade(@theme_bg_color, 0.7);
-    border-radius: 3px;
+    outline-offset: 2px;
     -gtk-outline-radius: 5px;
-    background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_bg_color, 0.8), 0.9),
-                                      shade(shade(@theme_bg_color, 0.8), 1.1)
-                                      );
 }
 
-scale highlight {
-    border-color: shade(@theme_selected_bg_color, 0.7);
+scale slider,
+scale slider:backdrop {
+    border-width: 2px;
+    border-style: solid;
     background-image: linear-gradient(to bottom,
-                                      shade(shade(@theme_selected_bg_color, 0.9), 1.1),
-                                      shade(shade(@theme_selected_bg_color, 0.9), 0.9)
-                                      );
+                                      shade(@theme_bg_color, 1.2),
+                                      shade(@theme_bg_color, 0.97)
+                                     );
+    border-color: @dark_shadow;
+    border: 2px solid @light_shadow;
+    border-radius: 100%;
 }
 
-scale trough:disabled,
-scale highlight:disabled {
-    border-color: shade(@theme_bg_color, 0.9);
+scale slider:hover {
     background-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 0.99),
-                                      shade(@theme_bg_color, 0.95)
-                                      );
+                                      shade(@theme_selected_bg_color, 1.4),
+                                      shade(@theme_selected_bg_color, 1.2)
+                                     );
+    border-color: transparent;
 }
+
+scale slider:active {
+    border-color: @theme_selected_fg_color;
+}
+
+scale slider:disabled,
+scale slider:backdrop:disabled {
+    border-width: 2px;
+    border-style: solid;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.5),
+                                      shade(@theme_bg_color, 0.7)
+                                     );
+    border-color: @light_shadow;
+    border: 2px solid @light_shadow;
+}
+
+scale value,
+scale marks {
+    color: alpha(currentColor,0.4);
+}
+
+scale marks.top {
+    margin-bottom: 6px;
+    margin-top: -12px;
+}
+
+scale marks.bottom {
+    margin-top: 6px;
+    margin-bottom: -12px;
+}
+
+scale marks.top {
+    margin-right: 6px;
+    margin-left: -12px;
+}
+
+scale marks.bottom {
+    margin-left: 6px;
+    margin-right: -12px;
+}
+
+scale.fine-tune marks.top {
+    margin-bottom: 6px;
+    margin-top: -9px;
+}
+
+scale.fine-tune marks.bottom {
+    margin-top: 6px;
+    margin-bottom: -9px;
+}
+
+scale.fine-tune marks.top {
+    margin-right: 6px;
+    margin-left: -9px;
+}
+
+scale.fine-tune marks.bottom {
+    margin-left: 6px;
+    margin-right: -9px;
+}
+
+scale.horizontal indicator {
+    min-height: 6px;
+    min-width: 1px;
+}
+
+scale.horizontal.fine-tune indicator {
+    min-height: 3px;
+}
+
+scale.vertical indicator {
+    min-height: 1px;
+    min-width: 6px;
+}
+
+scale.vertical.fine-tune indicator {
+    min-width: 3px;
+}
+
 
 /*************
  *scrollbar *

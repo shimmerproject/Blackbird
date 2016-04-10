@@ -1,0 +1,172 @@
+/**********
+ * states *
+ **********/
+*:selected:backdrop,
+*:selected:focus:backdrop {
+	background-color: @backdrop_selected_bg_color;
+	color: @backdrop_selected_fg_color;
+}
+
+/******************
+ * common effects *
+ ******************/
+/* remove shadows */
+.button:active:backdrop,
+.primary-toolbar .button:active:backdrop {
+    box-shadow: none;
+}
+
+.entry:backdrop {
+    box-shadow: none;
+}
+
+/**********
+ * button *
+ **********/
+/* default button */
+.button.default:backdrop {
+    border-color: mix(shade(@theme_bg_color, 0.8), @backdrop_selected_bg_color, 0.3);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.12), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)));
+}
+
+.button.default:hover:backdrop {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.40), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.3)));
+}
+
+.button.default:active:backdrop {
+    border-color: mix(shade(@theme_bg_color, 0.7), @backdrop_selected_bg_color, 0.3);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 0.97), @backdrop_selected_bg_color, 0.3)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.82), @backdrop_selected_bg_color, 0.3)));
+}
+
+.button.default:active:hover:backdrop {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (mix(shade(shade(@theme_bg_color, 1.06), 1.05), @backdrop_selected_bg_color, 0.1)),
+                                     to (mix(shade(shade(@theme_bg_color, 1.06), 0.90), @backdrop_selected_bg_color, 0.1)));
+}
+
+/****************
+ * cell and row *
+ ****************/
+row:selected:backdrop,
+row:selected:focus:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.9);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@backdrop_selected_bg_color, 1.1)),
+                                     to (shade(@backdrop_selected_bg_color, 0.9)));
+
+    color: @backdrop_selected_fg_color;
+}
+
+/************
+ * iconview *
+ ************/
+GtkIconView.view.cell:selected:backdrop,
+GtkIconView.view.cell:selected:focus:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.9);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@backdrop_selected_bg_color, 1.1)),
+                                     to (shade(@backdrop_selected_bg_color, 0.9)));
+
+    color: @backdrop_selected_fg_color;
+}
+
+/*******************
+ * symbolic images *
+ *******************/
+.image:selected:backdrop,
+.image:selected:hover:backdrop,
+.view.image:selected:backdrop,
+.view.image:selected:hover:backdrop {
+    color: @backdrop_selected_fg_color;
+}
+
+/*************************
+ * progressbar and scale *
+ *************************/
+.progressbar:backdrop,
+.progressbar row:backdrop,
+.progressbar row:hover:backdrop,
+.progressbar row:selected:backdrop,
+.progressbar row:selected:focus:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from (shade(@backdrop_selected_bg_color, 1.1)),
+                                    to (shade(@backdrop_selected_bg_color, 0.9)));
+}
+
+.progressbar.vertical:backdrop {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                    from (shade(@backdrop_selected_bg_color, 1.1)),
+                                    to (shade(@backdrop_selected_bg_color, 0.9)));
+}
+
+.trough row:backdrop,
+.trough row:hover:backdrop,
+.trough row:selected:backdrop,
+.trough row:selected:focus:backdrop {
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 1.1)),
+                                     to (shade(@theme_bg_color, 1.12)));
+}
+
+.level-bar.fill-block:backdrop {
+    border-width: 1px;
+    border-style: solid;
+    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@backdrop_selected_bg_color, 1.15)),
+                                     to (shade(@backdrop_selected_bg_color, 0.95)));
+
+}
+
+.level-bar.fill-block.empty-fill-block:backdrop {
+    border-color: alpha(@theme_fg_color, 0.1);
+    background-color: transparent;
+    background-image: none;
+}
+
+.scale.highlight.left:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from (shade(@backdrop_selected_bg_color, 1.1)),
+                                    to (shade(@backdrop_selected_bg_color, 0.9)));
+}
+
+.scale.highlight.bottom:backdrop {
+    border-color: shade(@backdrop_selected_bg_color, 0.8);
+    background-image: -gtk-gradient(linear, left top, right top,
+                                    from (shade(@backdrop_selected_bg_color, 1.1)),
+                                    to (shade(@backdrop_selected_bg_color, 0.9)));
+}
+
+.scale.highlight.left:insensitive:backdrop {
+    border-color: shade(@theme_bg_color, 0.9);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 0.99)),
+                                     to (shade(@theme_bg_color, 0.95)));
+}
+
+.scale.highlight.bottom:insensitive:backdrop {
+    border-color: shade(@theme_bg_color, 0.9);
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_bg_color, 0.99)),
+                                     to (shade(@theme_bg_color, 0.95)));
+}
+
+/************
+ * viewport *
+ ************/
+.view:selected:backdrop,
+.view:selected:focus:backdrop {
+    background-color: @backdrop_selected_bg_color;
+    color: @backdrop_selected_fg_color;
+}

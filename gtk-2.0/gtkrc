@@ -503,6 +503,9 @@ style "xfdesktop-icon-view" {
     XfdesktopIconView::selected-shadow-x-offset = 1
     XfdesktopIconView::shadow-y-offset = 1
     XfdesktopIconView::selected-shadow-y-offset = 1
+    XfdesktopIconView::cell-spacing = 2
+    XfdesktopIconView::cell-padding = 6
+    XfdesktopIconView::cell-text-width-proportion = 1.9
     fg[NORMAL] = shade (0.9, @selected_fg_color)
     fg[ACTIVE] = @selected_fg_color
     engine "murrine"

@@ -1,0 +1,8 @@
+[X-GNOME-Metatheme]
+Name=Blackbird
+Type=X-GNOME-Metatheme
+Comment=Blackbird theme
+GtkTheme=Blackbird
+MetacityTheme=Blackbird
+IconTheme=Adwaita
+CursorTheme=Adwaita

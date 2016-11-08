@@ -13,7 +13,7 @@
 #panel_window {
     background-color: alpha (black, 0.5);
     color: white;
-    font: bold;
+    font-weight: bold;
     text-shadow: 0 1px alpha(black, 0.5);
     -gtk-icon-shadow: 0 1px alpha(black, 0.5);
     box-shadow: inset 0 -1px alpha (black, 0.5);
@@ -23,7 +23,7 @@
 #panel_window .menubar > .menuitem {
     background-color: transparent;
     color: white;
-    font: bold;
+    font-weight: bold;
     text-shadow: 0 1px alpha(black, 0.5);
     -gtk-icon-shadow: 0 1px alpha(black, 0.5);
 }
@@ -37,7 +37,7 @@
 }
 
 #panel_window .menubar .menu .menuitem {
-    font: normal;
+    font-weight: normal;
     text-shadow: none;
 }
 
@@ -93,11 +93,11 @@
 
 #login_window #user_combobox {
     color: @lightdm_fg_color;
-    font: 18px;
+    font-size: 18px;
 }
 
 #login_window #user_combobox .menu {
-    font: normal;
+    font-weight: normal;
 }
 
 #login_window #user_combobox .arrow {
@@ -276,5 +276,5 @@
  ********************/
 #greeter_infobar {
     border-bottom-width: 0;
-    font: bold;
+    font-weight: bold;
 }

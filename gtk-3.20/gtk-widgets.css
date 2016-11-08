@@ -183,7 +183,7 @@ GtkCalendarbutton {
  * assistant *
  *************/
 GtkAssistantsidebar .highlight {
-    font: bold;
+    font-weight: bold;
 }
 
 GtkAssistantsidebar {
@@ -2746,7 +2746,8 @@ statusbar frame {
 switch {
     padding: 0;
     border-radius: 3px;
-    font: bold condensed;
+    font-weight: bold;
+    font-stretch: condensed;
 }
 
 switch slider {
@@ -2937,13 +2938,13 @@ headerbar button.image-button {
 
 .titlebar:not(headerbar) .title,
 headerbar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 12px;
 }
 
 .titlebar:not(headerbar) .subtitle,
 headerbar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 12px;
 }
 
@@ -4080,12 +4081,12 @@ actionbar button.image-button {
 }
 
 actionbar .title {
-    font: bold;
+    font-weight: bold;
     padding: 0 12px;
 }
 
 actionbar .subtitle {
-    font: smaller;
+    font-size: smaller;
     padding: 0 12px;
 }
 
@@ -4726,7 +4727,7 @@ GtkBubbleWindow toolbar {
 }
 
 .titlebar .title {
-    font: bold;
+    font-weight: bold;
     color: @titlebar_fg_color;
     text-shadow: 0 1px shade(@titlebar_bg_color, 1.1);
 }

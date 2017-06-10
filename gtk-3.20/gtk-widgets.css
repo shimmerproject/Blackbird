@@ -2808,6 +2808,17 @@ GtkTextView {
     color: @theme_text_color;
 }
 
+textview text {
+    color: white;
+    background-color: #232729;
+}
+
+textview text:backdrop {
+    color: #d3d4d5;
+    background-color: #252a2c;
+}
+
+
 /*****************
  * color chooser *
  *****************/

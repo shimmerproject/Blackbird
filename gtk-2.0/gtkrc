@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#333333;bg_color:#383838;tooltip_bg_color:#333333;selected_bg_color:#5588ee;text_color:#eeeeee;fg_color:#dedede;tooltip_fg_color:#dedede;selected_fg_color:#f9f9f9;menubar_bg_color:#333333;menubar_fg_color:#dedede;toolbar_bg_color:#333333;toolbar_fg_color:#dedede;menu_bg_color:#333333;menu_fg_color:#dedede;panel_bg_color:#333333;panel_fg_color:#dedede;link_color:#5588ee"
+gtk_color_scheme = "base_color:#333333;bg_color:#383838;tooltip_bg_color:#333333;selected_bg_color:#5588ee;text_color:#eeeeee;fg_color:#dedede;tooltip_fg_color:#dedede;selected_fg_color:#f9f9f9;menubar_bg_color:#333333;menubar_fg_color:#dedede;toolbar_bg_color:#333333;toolbar_fg_color:#dedede;menu_bg_color:#333333;menu_fg_color:#dedede;panel_bg_color:#333333;panel_fg_color:#dedede;link_color:#5588ee;visited_link_color:#7777ff;"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -86,7 +86,17 @@ style "evolve-default" {
 	WnckTasklist::fade-overlay-rect = 0
 
 	GtkWidget::link-color = @link_color
-	GtkWidget::visited-link-color = @text_color
+	GtkWidget::visited-link-color = @visited_link_color
+
+	GnomeHRef::link_color = @link_color
+
+	GtkHTML::link_color = @link_color
+	GtkHTML::alink_color = @link_color
+	GtkHTML::vlink_color = @visited_link_color
+
+	GtkIMHtml::hyperlink-color = @link_color
+	GtkIMHtml::hyperlink-visited-color = @visited_link_color
+	GtkIMHtml::hyperlink-prelight-color = shade(1.3, @link_color)
 
 	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @fg_color

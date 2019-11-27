@@ -41,8 +41,14 @@ XfceHeading,
     text-shadow: 0px 1px alpha(@dark_shadow, 0.15);
 }
 
+.panel{
+    background-color: @panel_bg_color; /*Mount devices requires*/
+}
+
+
 .xfce4-panel {
-    background-color: shade(@panel_bg_color, 0.35);
+    /* background-color: shade(@panel_bg_color, 0.35);  */
+    background-color: @panel_bg_color; /*notification plugin requires*/
     color: @panel_fg_color;
     font-weight: normal;
 }
